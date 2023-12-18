@@ -1,0 +1,106 @@
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+let mapleader = " "
+nmap <space> <Leader>
+nnoremap <Leader>u :action ShowUsages<CR>
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
+
+" plug
+set surround
+
+" IDEA stuff
+set ideajoin
+set idearefactormode=keep
+set ideamarks
+
+" Highlight copied text
+" Mappings
+
+" map <leader>e <Action>(ActivateProjectToolWindow)
+
+" map <leader>qq <Action>(CloseTab)
+
+map <leader>[ <Action>(GotoPreviousError)
+map <leader>] <Action>(GotoNextError)
+
+"
+map <leader>tb <Action>(ToggleBookmark)
+
+" Navigation
+map gg <Action>(JumpToLastChange)
+map gn <Action>(GotoNextBookmarkInEditor)
+map gp <Action (GotoPreviousBookmarkInEditor)
+
+" Search
+map <leader>fe <Action>(SearchEverywhere)
+map <leader>ff <Action>(GotoFile)
+map <leader>fg <Action>(FindInPath)
+map <leader>fa <Action>(GotoAction)
+map <leader>fs <Action>(GotoSymbol)
+map <leader>fr <Action>(RecentFiles)
+map <leader>fd <Action>(HelpDiagnosticTools)
+map <leader>ft <Action>(TextSearchAction)
+map <leader>/ <Action>(Find)
+
+" Run
+" map <leader>runClass (RunClass)
+map <leader>rr <Action>(Run)
+map <leader>rt <Action>(RunClass)
+
+"git
+map <leader>gk <Action>(ActivateCommitToolWindow)
+map <leader>gK <Action>(Vcs.Push)
+" Debug
+map <leader>db <Action>(ToggleLineBreakpoint)
+map <leader>dd <Action>(Resume)
+map <leader>dr <Action>(Debug)
+map <leader>dq <Action>(Stop)
+" Test
+
+map <leader>ot <Action>(GotoTest)
+map <leader>ct <Action>(GenerateTestMethod)
+map <leader>C <Action>(Generate)
+map <leader>tt <Action>(RunClass)
+
+" Completion
+imap <C-f> <Action>(CodeCompletion)
+
+" LSP
+map gD <Action>(GotoTypeDeclaration)
+map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+map <leader>rn <Action>(RenameElement)
+
+map <leader>oc <Action>(ReformatCode)
+map <leader>oi <Action>(OptimizeImports)
+map <leader>fm <Action>(ReformatCode)<Action>(OptimizeImports)
+map <leader>ev <Action>(IntroduceVariable)
+map <leader>ec <Action>(IntroduceConstant)
+map <leader>em <Action>(ExtractMethod)
+map <leader>ef <Action>(IntroduceField)
+
+map <leader>k <Action>(QuickJavaDoc)
+imap <C-s> <Action>(ParameterInfo)
+map <C-s> <Action>(ParameterInfo)
+map <leader>S <Action>(GotoSymbol)
+
+map <leader><leader>T <Action>(VimFindActionIdAction)
+" toNextBookmarkInEditor)
+
+
+" ! clojure
+map <leader>rj <Action>(:cursive.repl.actions/load-file)
