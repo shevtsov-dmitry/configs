@@ -38,7 +38,7 @@ map <leader>[ <Action>(GotoPreviousError)
 map <leader>] <Action>(GotoNextError)
 
 "
-map <leader>tb <Action>(ToggleBookmark)
+map <leader>tm <Action>(ToggleBookmark)
 
 " Navigation
 map gg <Action>(JumpToLastChange)
@@ -65,7 +65,7 @@ map <leader>rt <Action>(RunClass)
 map <leader>gk <Action>(ActivateCommitToolWindow)
 map <leader>gK <Action>(Vcs.Push)
 " Debug
-map <leader>db <Action>(ToggleLineBreakpoint)
+map <leader>tb <Action>(ToggleLineBreakpoint)
 map <leader>dd <Action>(Resume)
 map <leader>dr <Action>(Debug)
 map <leader>dq <Action>(Stop)
