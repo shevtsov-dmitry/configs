@@ -45,6 +45,8 @@ map gg <Action>(JumpToLastChange)
 map <leader>gn <Action>(GotoNextBookmarkInEditor)
 map <leader>gp <Action>(GotoPreviousBookmarkInEditor)
 map <leader>rp <Action>($LRU)
+map <leader>np (WelcomeScreen.CreateNewProject)
+map <leader>ngp (ProjectFromVersionControl)
 
 " Search
 pap <leader>fe <Action>(SearchEverywhere)
@@ -70,8 +72,8 @@ map <leader>tb <Action>(ToggleLineBreakpoint)
 map <leader>dd <Action>(Resume)
 map <leader>dr <Action>(Debug)
 map <leader>dq <Action>(Stop)
-" Test
 
+" Test
 map <leader>ot <Action>(GotoTest)
 map <leader>ct <Action>(GenerateTestMethod)
 map <leader>C <Action>(Generate)
