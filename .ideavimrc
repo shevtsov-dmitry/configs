@@ -42,11 +42,12 @@ map <leader>tm <Action>(ToggleBookmark)
 
 " Navigation
 map gg <Action>(JumpToLastChange)
-map gn <Action>(GotoNextBookmarkInEditor)
-map gp <Action (GotoPreviousBookmarkInEditor)
+map <leader>gn <Action>(GotoNextBookmarkInEditor)
+map <leader>gp <Action>(GotoPreviousBookmarkInEditor)
+map <leader>rp <Action>($LRU)
 
 " Search
-map <leader>fe <Action>(SearchEverywhere)
+pap <leader>fe <Action>(SearchEverywhere)
 map <leader>ff <Action>(GotoFile)
 map <leader>fg <Action>(FindInPath)
 map <leader>fa <Action>(GotoAction)
