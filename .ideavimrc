@@ -41,7 +41,7 @@ map <leader>] <Action>(GotoNextError)
 map <leader>tm <Action>(ToggleBookmark)
 
 " Navigation
-map gg <Action>(JumpToLastChange)
+map <leader>gg <Action>(JumpToLastChange)
 map gn <Action>(GotoNextBookmarkInEditor)
 map gp <Action (GotoPreviousBookmarkInEditor)
 
@@ -69,8 +69,8 @@ map <leader>tb <Action>(ToggleLineBreakpoint)
 map <leader>dd <Action>(Resume)
 map <leader>dr <Action>(Debug)
 map <leader>dq <Action>(Stop)
-" Test
 
+" Test
 map <leader>ot <Action>(GotoTest)
 map <leader>ct <Action>(GenerateTestMethod)
 map <leader>C <Action>(Generate)
@@ -86,8 +86,8 @@ map gi <Action>(GotoImplementation)
 map <leader>rn <Action>(RenameElement)
 
 map <leader>oc <Action>(ReformatCode)
+map <leader>fm <Action>(ReformatCode)<Action>(ReformatWithPrettierAction)
 map <leader>oi <Action>(OptimizeImports)
-map <leader>fm <Action>(ReformatCode)<Action>(OptimizeImports)
 map <leader>ev <Action>(IntroduceVariable)
 map <leader>ec <Action>(IntroduceConstant)
 map <leader>em <Action>(ExtractMethod)
