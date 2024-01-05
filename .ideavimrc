@@ -46,6 +46,7 @@ map gn <Action>(GotoNextBookmarkInEditor)
 map gp <Action (GotoPreviousBookmarkInEditor)
 
 " Search
+map <leader>fc <Action>(GotoClass)
 map <leader>fe <Action>(SearchEverywhere)
 map <leader>ff <Action>(GotoFile)
 map <leader>fg <Action>(FindInPath)
@@ -71,10 +72,9 @@ map <leader>dr <Action>(Debug)
 map <leader>dq <Action>(Stop)
 
 " Test
-map <leader>ot <Action>(GotoTest)
+map <leader>gt <Action>(GotoTest)
 map <leader>ct <Action>(GenerateTestMethod)
 map <leader>C <Action>(Generate)
-map <leader>tt <Action>(RunClass)
 
 " Completion
 imap <C-f> <Action>(CodeCompletion)
