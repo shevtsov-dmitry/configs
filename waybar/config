@@ -47,7 +47,7 @@
 		"tooltip": false
 	},
 	"memory": {
-		"format": "💾 {used:0.1f}G"
+		"format": "MEMORY {used:0.1f} GB"
 	},
 	"network": {
 		"family": "ipv4",
