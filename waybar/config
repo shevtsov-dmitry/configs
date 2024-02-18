@@ -42,12 +42,13 @@
 		"format": "<span color='#e88939'>{icon}</span> {temperatureC}°C",
 		"format-icons": ["", "", ""]
 	},
+
 	"cpu": {
 		"format": "CPU {usage}%",
 		"tooltip": false
 	},
 	"memory": {
-		"format": "MEMORY {used:0.1f} GB"
+		"format": "RAM {used:0.1f} GB"
 	},
 	"network": {
 		"family": "ipv4",
@@ -117,8 +118,8 @@
 	"idle_inhibitor": {
 		"format": "<span color='#589df6'>{icon}</span>",
 		"format-icons": {
-			"activated": "",
-			"deactivated": ""
+			"activated": "  ",
+			"deactivated": "  "
 		},
 		"on-click-right": "swaylock -eFfki ~/.config/lockscreen-origin.png"
 	},
