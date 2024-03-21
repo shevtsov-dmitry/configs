@@ -13,11 +13,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-
-
+# remaps
 alias idea="~/IDE/intellij/bin/idea.sh"
-alias rustrover="~/IDE/rustrover/bin/rustrover.sh"
 alias vim="nvim"
+alias grep="rg"
 
 # Simple scripts
 alias twinmonitor="~/scripts/./twinmonitor.sh"
