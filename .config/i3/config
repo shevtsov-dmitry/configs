@@ -24,7 +24,7 @@ font pango: FiraCodeNerdFont 10
 exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 -r 143.98 --primary
 
 # layout
-exec --no-startup-id "setxkbmap -layout us, ru -option grp:win_space_toggle"
+exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -181,10 +181,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
