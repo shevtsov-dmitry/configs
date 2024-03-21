@@ -24,7 +24,7 @@ font pango: FiraCodeNerdFont 10
 exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 -r 143.98 --primary
 
 # layout
-exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
+exec --no-startup-id setxkbmap -layout us,ru -option grp:win_space_toggle
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -65,6 +65,7 @@ bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipb
 floating_modifier $mod
 # toggle tiling / floating
 bindsym $mod+Shift+t floating toggle
+bindsym $mod+Shift+space floating toggle
 # sticky window toggle
 bindsym $mod+$alt+t sticky toggle
 # change focus between tiling / floating windows
