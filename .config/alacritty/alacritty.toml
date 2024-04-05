@@ -1,0 +1,31 @@
+import = [
+    # uncomment the flavour you want below:
+    # "~/.config/alacritty/themes/catppuccin-latte.toml",
+    # "~/.config/alacritty/themes/catppuccin-frappe.toml",
+    "~/.config/alacritty/themes/catppuccin-macchiato.toml",
+    # "~/.config/alacritty/themes/catppuccin-mocha.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 11
+offset.x = 0
+offset.y = 3
+
+[font.bold]
+family = "FiraCodeNerdFont"
+style = "Bold"
+
+[font.bold_italic]
+family = "FiraCodeNerdFont"
+style = "Bold Italic"
+
+[font.italic]
+family = "FiraCodeNerdFont"
+style = "Italic"
+
+[font.normal]
+family = "FiraCodeNerdFont"
+style = "Regular"
