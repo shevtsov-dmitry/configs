@@ -9,15 +9,10 @@ exec_always --no-startup-id ~/scripts/autotiling-master/autotiling/autotiler-scr
 set $mod Mod4
 set $alt Mod1
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# outer frame font
 font pango: FiraCodeNerdFont 10
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-# font pango:DejaVu Sans Mono 8
-
-# background
+# background image
  exec --no-startup-id feh --bg-scale ~/Pictures/'sitting back fantasy.jpg'
 
 # display
@@ -48,7 +43,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-#order += "volume master"
+# order += "volume master"
 
 # volume master {
 #     format = "♪: %volume"
@@ -72,8 +67,9 @@ bindsym $mod+$alt+t sticky toggle
 bindsym $mod+$alt+f focus mode_toggle
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
 # bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+$alt+q kill
