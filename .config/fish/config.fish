@@ -6,14 +6,16 @@ set fish_prompt_pwd_dir_length 0
 set fish_greeting
 
 # bINDS
- bind \ed forward-word
+ bind \ed forward-char
 
 # ENV
 # set -Ux TERM 'xterm-256color'
-#
+
 # ALIAS
+files lf=ranger
+alias md=mkdir
 alias vim=nvim
-alias cat=bat
+alias ca=bat
 alias vimdark="~/scripts/./nvim-switch-dark-light-themes.sh"
 alias idea="~/IDE/intellij/bin/idea.sh"
 
