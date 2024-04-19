@@ -12,7 +12,7 @@ set fish_greeting
 # set -Ux TERM 'xterm-256color'
 
 # ALIAS
-files lf=ranger
+alias lf=ranger
 alias md=mkdir
 alias vim=nvim
 alias ca=bat
