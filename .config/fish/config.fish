@@ -6,7 +6,8 @@ set fish_prompt_pwd_dir_length 0
 set fish_greeting
 
 # bINDS
- bind \ed forward-char
+bind \ed forward-char
+fzf_configure_bindings --directory=\ee
 
 # ENV
 # set -Ux TERM 'xterm-256color'
