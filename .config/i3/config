@@ -14,7 +14,7 @@ set $alt Mod1
 font pango: FiraCodeNerdFont 10
 
 # background image
- exec --no-startup-id feh --bg-scale ~/Pictures/arch-light-blue.jpg
+ exec --no-startup-id feh --bg-scale ~/Pictures/mount-mont-blanc-covered-snow-reflecting-water-evening-chamonix-france.jpg
 
 # display
 exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 -r 143.98 --primary
@@ -65,8 +65,8 @@ bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipb
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # toggle tiling / floating
-bindsym $mod+Shift+t floating toggle
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+t floating toggle
+# bindsym $mod+Shift+space floating toggle
 # sticky window toggle
 bindsym $mod+$alt+t sticky toggle
 # change focus between tiling / floating windows
