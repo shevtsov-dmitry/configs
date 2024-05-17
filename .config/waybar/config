@@ -12,6 +12,7 @@
     ],
     "modules-right": [
         "tray",
+		"cpu",
         "memory",
         "network",
         "pulseaudio",
@@ -57,18 +58,26 @@
             "10": []
         }
     },
+
+	"cpu": {
+		"interval": 5,
+		"format": "󰻠  CPU {usage}%",
+        "max-length": 10,
+		"tooltip": false
+	},
     "memory": {
         "interval": 5,
-        "format": "󰍛 {}%",
+        "format": "󰍛  RAM {}%",
         "max-length": 10
     },
     "tray": {
         "spacing": 10
     },
     "clock": {
+	    "interval": 1, 
         "tooltip-format": "{calendar}",
-        "format-alt": "  {:%a, %d %b %Y}",
-        "format": "  {:%I:%M %p}"
+        "format-alt": "   {:%d.%m.%Y}",
+        "format": "󱑓  {:%H:%M:%S}"
     },
     "network": {
         "format-wifi" : "{icon}",
@@ -85,7 +94,7 @@
 	"nospacing": 1,
     },
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{icon}  {volume}%",
         "format-bluetooth": "󰂰",
         "nospacing": 1,
         "tooltip-format": "Volume : {volume}%",
@@ -101,42 +110,6 @@
         "format": "  ",
         "tooltip": false,
         "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": {
-            "charging": [
-                "󰢜",
-                "󰂆",
-                "󰂇",
-                "󰂈",
-                "󰢝",
-                "󰂉",
-                "󰢞",
-                "󰂊",
-                "󰂋",
-                "󰂅"
-            ],
-            "default": [
-                "󰁺",
-                "󰁻",
-                "󰁼",
-                "󰁽",
-                "󰁾",
-                "󰁿",
-                "󰂀",
-                "󰂁",
-                "󰂂",
-                "󰁹"
-            ]
-        },
-        "format-full": "Charged ",
-        "interval": 5,
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
-        "tooltip": false
     },
     "custom/power": {
         "format": "󰤆",
