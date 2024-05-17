@@ -11,10 +11,10 @@ set $mod Mod4
 set $alt Mod1
 
 # outer frame font
-font pango: FiraCodeNerdFont 10
+font pango: consolas 10
 
-# background image
- exec --no-startup-id feh --bg-scale ~/Pictures/mount-mont-blanc-covered-snow-reflecting-water-evening-chamonix-france.jpg
+# background image / wallpapers
+ exec --no-startup-id feh --bg-scale ~/Pictures/girl-on-firecrackers-night-view.jpg
 
 # display
 exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 -r 143.98 --primary
@@ -174,7 +174,8 @@ bindsym $mod+$alt+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+$alt+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+$alt+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+$alt+Delete exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+$alt+Delete exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
