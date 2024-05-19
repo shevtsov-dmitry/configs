@@ -49,6 +49,13 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+
+# i3-gaps config
+gaps inner 7
+gaps outer 5
+# smart_gaps on
+smart_borders on
 # order += "volume master"
 
 # volume master {
