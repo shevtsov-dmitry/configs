@@ -17,6 +17,7 @@ set DEV_TOOLS_GRADLE_WATCH gradle java --continuous --parallel --build-cache --c
 alias ls='eza --classify --icons --group-directories-first'
 alias lf=ranger
 alias lg=lazygit
+alias nim=neovide
 alias md=mkdir
 alias vim=nvim
 alias ca='bat -p'
@@ -27,7 +28,8 @@ alias light="~/scripts/light.sh"
 alias dark="~/scripts/dark.sh"
 
 # set Oh my posh theme
-oh-my-posh init fish --config /usr/share/oh-my-posh/themes/jandedobbeleer.omp.json | source
+# oh-my-posh init fish --config /usr/share/oh-my-posh/themes/jandedobbeleer.omp.json | source
+oh-my-posh init fish --config /usr/share/oh-my-posh/themes/space.omp.json | source
 
 function custom_colorscheme
     set -U fish_color_normal normal
