@@ -16,9 +16,10 @@ set DEV_TOOLS_GRADLE_WATCH gradle java --continuous --parallel --build-cache --c
 # ALIAS
 alias ls='eza --classify --icons --group-directories-first'
 alias lf=ranger
+alias lg=lazygit
 alias md=mkdir
 alias vim=nvim
-alias ca=bat
+alias ca='bat -p'
 alias idea="~/IDE/intellij/bin/idea.sh"
 
 alias vimdark="~/scripts/./nvim-switch-dark-light-themes.sh"
