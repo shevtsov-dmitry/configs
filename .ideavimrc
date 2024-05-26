@@ -1,106 +1,103 @@
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
+"" -- suggested options --
+" show a few lines of context around the cursor. note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 
-" Do incremental searching.
+" do incremental searching.
 set incsearch
 
 let mapleader = " "
-nmap <space> <Leader>
-nnoremap <Leader>u :action ShowUsages<CR>
-" Don't use Ex mode, use Q for formatting.
-map Q gq
+nmap <space> <leader>
+nnoremap <leader>u :action showusages<cr>
+" don't use ex mode, use q for formatting.
+map q gq
 
-" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
-Plug 'machakann/vim-highlightedyank'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'preservim/nerdtree'
+set clipboard+=unnamed
+" --- enable ideavim plugins https://jb.gg/ideavim-plugins
+
+plug 'machakann/vim-highlightedyank'
+plug 'tpope/vim-commentary'
+plug 'tpope/vim-surround'
+plug 'preservim/nerdtree'
 
 " plug
 set surround
 
-" IDEA stuff
+" idea stuff
 set ideajoin
 set idearefactormode=keep
 set ideamarks
 
-" Highlight copied text
-" Mappings
+" highlight copied text
+" mappings
 
-" map <leader>e <Action>(ActivateProjectToolWindow)
+" map <leader>e <action>(activateprojecttoolwindow)
+" map <leader>qq <action>(closetab)
 
-" map <leader>qq <Action>(CloseTab)
-
-map <leader>[ <Action>(GotoPreviousError)
-map <leader>] <Action>(GotoNextError)
+map <leader>[ <action>(gotopreviouserror)
+map <leader>] <action>(gotonexterror)
 
 "
-map <leader>tm <Action>(ToggleBookmark)
+map <leader>tm <action>(togglebookmark)
 
-" Navigation
-map <leader>gg <Action>(JumpToLastChange)
-map gn <Action>(GotoNextBookmarkInEditor)
-map gp <Action (GotoPreviousBookmarkInEditor)
+" navigation
+map <leader>gg <action>(jumptolastchange)
+map gn <action>(gotonextbookmarkineditor)
+map gp <action (gotopreviousbookmarkineditor)
 
-" Search
-map <leader>fc <Action>(GotoClass)
-map <leader>fe <Action>(SearchEverywhere)
-map <leader>ff <Action>(GotoFile)
-map <leader>fg <Action>(FindInPath)
-map <leader>fa <Action>(GotoAction)
-map <leader>fs <Action>(GotoSymbol)
-map <leader>fr <Action>(RecentFiles)
-map <leader>fd <Action>(HelpDiagnosticTools)
-map <leader>ft <Action>(TextSearchAction)
-map <leader>/ <Action>(Find)
+" search
+map <leader>fc <action>(gotoclass)
+map <leader>fe <action>(searcheverywhere)
+map <leader>ff <action>(gotofile)
+map <leader>fg <action>(findinpath)
+map <leader>fa <action>(gotoaction)
+map <leader>fs <action>(gotosymbol)
+map <leader><leader> <action>(recentfiles)
+map <leader>fd <action>(helpdiagnostictools)
+map <leader>ft <action>(textsearchaction)
+map <leader>/ <action>(find)
 
-" Run
-" map <leader>runClass (RunClass)
-map <leader>rr <Action>(Run)
-map <leader>rt <Action>(RunClass)
+" run
+" map <leader>runclass (runclass)
+map <leader>rr <action>(run)
+map <leader>rt <action>(runclass)
 
 "git
-map <leader>gk <Action>(ActivateCommitToolWindow)
-map <leader>gK <Action>(Vcs.Push)
-" Debug
-map <leader>tb <Action>(ToggleLineBreakpoint)
-map <leader>dd <Action>(Resume)
-map <leader>dr <Action>(Debug)
-map <leader>dq <Action>(Stop)
+map <leader>gk <action>(activatecommittoolwindow)
+map <leader>gk <action>(vcs.push)
+" debug
+map <leader>tb <action>(togglelinebreakpoint)
+map <leader>dd <action>(resume)
+map <leader>dr <action>(debug)
+map <leader>dq <action>(stop)
 
-" Test
-map <leader>gt <Action>(GotoTest)
-map <leader>ct <Action>(GenerateTestMethod)
-map <leader>C <Action>(Generate)
+" test
+map <leader>gt <action>(gototest)
+map <leader>ct <action>(generatetestmethod)
+map <leader>c <action>(generate)
 
-" Completion
-imap <C-f> <Action>(CodeCompletion)
+" completion
+imap <c-f> <action>(codecompletion)
 
-" LSP
-map gD <Action>(GotoTypeDeclaration)
-map gd <Action>(GotoDeclaration)
-map gi <Action>(GotoImplementation)
-map <leader>rn <Action>(RenameElement)
+" lsp
+map gd <action>(gototypedeclaration)
+map gd <action>(gotodeclaration)
+map gi <action>(gotoimplementation)
+map <leader>rn <action>(renameelement)
 
-map <leader>oc <Action>(ReformatCode)
-map <leader>fm <Action>(ReformatCode)<Action>(ReformatWithPrettierAction)
-map <leader>oi <Action>(OptimizeImports)
-map <leader>ev <Action>(IntroduceVariable)
-map <leader>ec <Action>(IntroduceConstant)
-map <leader>em <Action>(ExtractMethod)
-map <leader>ef <Action>(IntroduceField)
+map <leader>oc <action>(reformatcode)
+map <leader>fm <action>(reformatcode)<action>(reformatwithprettieraction)
+map <leader>oi <action>(optimizeimports)
+map <leader>ev <action>(introducevariable)
+map <leader>ec <action>(introduceconstant)
+map <leader>em <action>(extractmethod)
+map <leader>ef <action>(introducefield)
 
-map <leader>k <Action>(QuickJavaDoc)
-imap <C-s> <Action>(ParameterInfo)
-map <C-s> <Action>(ParameterInfo)
-map <leader>S <Action>(GotoSymbol)
+map <leader>k <action>(quickjavadoc)
+imap <c-s> <action>(parameterinfo)
+map <c-s> <action>(parameterinfo)
+map <leader>s <action>(gotosymbol)
 
-map <leader><leader>T <Action>(VimFindActionIdAction)
-" toNextBookmarkInEditor)
-
-
-" ! clojure
-map <leader>rj <Action>(:cursive.repl.actions/load-file)
+map <leader><leader>t <action>(vimfindactionidaction)
+" tonextbookmarkineditor)
