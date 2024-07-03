@@ -1,34 +1,28 @@
 import = [
-    # uncomment the flavour you want below:
-   # "~/.config/alacritty/themes/catppuccin-latte.toml",
-    # "~/.config/alacritty/themes/catppuccin-frappe.toml",
-    # "~/.config/alacritty/themes/catppuccin-macchiato.toml",
-    # "~/.config/alacritty/themes/catppuccin-mocha.toml",
-    # "~/.config/alacritty/themes/base16-alacritty.toml",
-    # "~/.config/alacritty/themes/tokyo-night.toml",
+    "~/.config/alacritty/themes/dayfox.toml",
 ]
 
 [env]
 TERM = "xterm-256color"
 
 [font]
-size = 10
+size = 12
 offset.x = 0
 offset.y = 2
 
+[font.normal]
+family = "NotoMono Nerd Font"
+style = "Regular"
+
 [font.bold]
-family = "Noto Mono"
+family = "CaskaydiaCove NFM SemiBold"
 style = "Bold"
 
-[font.bold_italic]
-family = "Noto Mono"
-style = "Bold Italic"
+# [font.bold_italic]
+# family = "Liberation Mono Italic"
+# style = "Bold Italic"
 
-[font.italic]
-family = "Noto Mono"
-style = "Italic"
+# [font.italic]
+# family = "NotoMono Nerd Font"
+# style = "Italic"
 
-[font.normal]
-family = "NotoMonoNerdFont"
-# family = "monospace"
-style = "Regular"
