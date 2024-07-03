@@ -14,10 +14,14 @@ set $alt Mod1
 font pango: consolas 10
 
 # background image / wallpapers
- exec --no-startup-id feh --bg-scale ~/Pictures/girl-on-firecrackers-night-view.jpg
+ # exec --no-startup-id feh --bg-scale ~/Pictures/girl-on-firecrackers-night-view.jpg
+exec --no-startup-id nitrogen --restore
 
 # display
-exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 -r 143.98 --primary
+exec --no-startup-id xrandr --output DP-4 --mode 1920x1080 -r 143.98 --primary --pos 0x0
+exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --pos -1080x-250 -o left --rotate left
+# monitor=HDMI-A-1, 1080x1920@60, -1080x-250,1,transform,1
+# exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 -r 143.98 --primary
 
 # layout
 exec --no-startup-id setxkbmap -layout us,ru -option grp:win_space_toggle
@@ -67,6 +71,7 @@ smart_borders on
 
 # Make screenshot
 bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # floating windows
 # Use Mouse+$mod to drag floating windows to their wanted position
