@@ -1,80 +1,91 @@
-"" -- suggested options --
-" show a few lines of context around the cursor. note that this makes the
+" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 
-" do incremental searching.
+" Do incremental searching.
 set incsearch
 
 let mapleader = " "
-nmap <space> <leader>
-" nnoremap <leader>u :Action showusages<cr>
-" don't use ex mode, use q for formatting.
-" map q gq
+nmap <space> <Leader>
+nnoremap <Leader>u :action ShowUsages<CR>
+" Don't use Ex mode, use Q for formatting.
+map Q gq
 
-set clipboard+=unnamed
-" --- enable ideavim plugins https://jb.gg/ideavim-plugins
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
-plug 'machakann/vim-highlightedyank'
-plug 'tpope/vim-commentary'
-plug 'tpope/vim-surround'
-plug 'preservim/nerdtree'
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
 
 " plug
 set surround
 
-" idea stuff
+" IDEA stuff
 set ideajoin
 set idearefactormode=keep
 set ideamarks
 
-" diagnostics
+" Highlight copied text
+" Mappings
+
+" map <leader>e <Action>(ActivateProjectToolWindow)
+
+" map <leader>qq <Action>(CloseTab)
+
 map <leader>[ <Action>(GotoPreviousError)
 map <leader>] <Action>(GotoNextError)
 
-" bookmarks
-map tm <Action>(ToggleBookmark)
-map gn <Action>(GotoNextBookmarkInEditor)
-map gp <Action>(GotoPreviousBookmarkInEditor)
+"
+map <leader>tm <Action>(ToggleBookmark)
 
-" navigation
+" Navigation
 map <leader>gg <Action>(JumpToLastChange)
+map gn <Action>(GotoNextBookmarkInEditor)
+map gp <Action (GotoPreviousBookmarkInEditor)
 
-" search
-map <leader>fc <Action>(GotoClass) " [F]ind [C]lasses
-map <leader>ff <Action>(GotoFile) " [F]ind [F]iles
-map <leader>fg <Action>(FindInPath) " [F]ind [G]lobally
-map <leader>fa <Action>(GotoAction) " [F]ind [A]ction
-map <leader>fs <Action>(GotoSymbol) " [F]ind [S]ymbol
-map <leader>fr <Action>(RecentFiles) " [F]ind [R]ecent
-map <leader>fd <Action>(HelpDiagnosticTools) " [F]ind [Dlesiagnostics
-map <leader>ft <Action>(TextSearchAction) " [F]ind [T]ext (global)
-map <leader>/ <Action>(Find) " [F]ind in [/] current buffer (local)
+" Search
+map <leader>fc <Action>(GotoClass)
+map <leader>fe <Action>(SearchEverywhere)
+map <leader>ff <Action>(GotoFile)
+map <leader>fg <Action>(FindInPath)
+map <leader>fa <Action>(GotoAction)
+map <leader>fs <Action>(GotoSymbol)
+map <leader>fr <Action>(RecentFiles)
+map <leader>fd <Action>(HelpDiagnosticTools)
+map <leader>ft <Action>(TextSearchAction)
+map <leader>/ <Action>(Find)
 
-" run
+" Run
+" map <leader>runClass (RunClass)
 map <leader>rr <Action>(Run)
 map <leader>rt <Action>(RunClass)
 
-" git
+"git
 map <leader>gk <Action>(ActivateCommitToolWindow)
-map <leader>gK <Action>(vcs.push)
-
-" debug
-map tb <Action>(ToggleLineBreakpoint)
-" map <leader>dd <Action>(resume)
+map <leader>gK <Action>(Vcs.Push)
+" Debug
+map <leader>tb <Action>(ToggleLineBreakpoint)
+map <leader>dd <Action>(Resume)
 map <leader>dr <Action>(Debug)
-map <leader>st <Action>(Stop)
+map <leader>dq <Action>(Stop)
 
-" test
+" Test
 map <leader>gt <Action>(GotoTest)
 map <leader>ct <Action>(GenerateTestMethod)
+map <leader>C <Action>(Generate)
 
-" lsp
-map gd <Action>(GotoTypeDeclaration)
+" Completion
+imap <C-f> <Action>(CodeCompletion)
+
+" LSP
+map gD <Action>(GotoTypeDeclaration)
 map gd <Action>(GotoDeclaration)
 map gi <Action>(GotoImplementation)
 map <leader>rn <Action>(RenameElement)
 
+map <leader>oc <Action>(ReformatCode)
 map <leader>fm <Action>(ReformatCode)<Action>(ReformatWithPrettierAction)
 map <leader>oi <Action>(OptimizeImports)
 map <leader>ev <Action>(IntroduceVariable)
@@ -82,9 +93,13 @@ map <leader>ec <Action>(IntroduceConstant)
 map <leader>em <Action>(ExtractMethod)
 map <leader>ef <Action>(IntroduceField)
 
-map <leader>k <Action>(QuickJavadoc)
-imap <c-s> <Action>(ParameterInfo)
-map <c-s> <Action>(ParameterInfo)
-map <leader>s <Action>(GotoSymbol)
+map <leader>k <Action>(QuickJavaDoc)
+imap <C-s> <Action>(ParameterInfo)
+map <C-s> <Action>(ParameterInfo)
+map <leader>S <Action>(GotoSymbol)
 
-map <leader><leader>t <Action>(VimFindActionId)
+map <leader><leader>T <Action>(VimFindActionIdAction)
+" toNextBookmarkInEditor)
+
+" ! clojure
+map <leader>rj <Action>(:cursive.repl.actions/load-file)
