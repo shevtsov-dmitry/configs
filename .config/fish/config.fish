@@ -23,10 +23,6 @@ alias vim=nvim
 alias ca='bat -p'
 alias idea="~/IDE/intellij/bin/idea.sh"
 
-alias vimdark="~/scripts/./nvim-switch-dark-light-themes.sh"
-alias light="~/scripts/light.sh"
-alias dark="~/scripts/dark.sh"
-
 # set Oh my posh theme
 # oh-my-posh init fish --config /usr/share/oh-my-posh/themes/jandedobbeleer.omp.json | source
 oh-my-posh init fish --config /usr/share/oh-my-posh/themes/space.omp.json | source
