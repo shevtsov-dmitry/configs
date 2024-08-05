@@ -47,7 +47,7 @@ map gp <Action (GotoPreviousBookmarkInEditor)
 
 " Search
 map <leader>fc <Action>(GotoClass)
-map <leader>fe <Action>(SearchEverywhere)
+map <leader>fe <Action>(GotoUrlAction)
 map <leader>ff <Action>(GotoFile)
 map <leader>fg <Action>(FindInPath)
 map <leader>fa <Action>(GotoAction)
@@ -83,6 +83,7 @@ imap <C-f> <Action>(CodeCompletion)
 map gD <Action>(GotoTypeDeclaration)
 map gd <Action>(GotoDeclaration)
 map gi <Action>(GotoImplementation)
+map <leader>cr <Action>(RenameElement)
 map <leader>rn <Action>(RenameElement)
 
 map <leader>oc <Action>(ReformatCode)
