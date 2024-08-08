@@ -12,15 +12,20 @@ offset.x = 0
 offset.y = 2
 
 [font.normal]
-family = "NotoMono Nerd Font"
+#CaskaydiaCove Nerd Font
+#NotoMono Nerd Font
+family = "CaskaydiaCove Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "NotoMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
 style = "Bold"
 
 [window]
 opacity = 0.82
+
+[mouse]
+hide_when_typing = true
 
 [cursor]
 style.blinking = "Always"
