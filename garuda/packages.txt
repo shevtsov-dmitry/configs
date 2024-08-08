@@ -18,3 +18,4 @@ xorg-xlsclients
 oh-my-posh
 tree
 glow
+xdg-desktop-portal-hyprland

@@ -1,3 +1,10 @@
+# ENV
+set CURRENT_SERVER_URL http://localhost:8080
+
+set FORCE_WAYLAND --enable-features=UseOzonePlatform --ozone-platform=wayland
+set DEV_TOOLS_GRADLE_WATCH gradle java --continuous --parallel --build-cache --configuration-cache
+set XDG_CURRENT_DESKTOP KDE
+
 ## Set values
 # Hide welcome message & ensure we are reporting fish as shell
 set fish_greeting
@@ -14,7 +21,6 @@ end
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
-
 
 ## Environment setup
 # Apply .profile: use this to put fish compatible .profile stuff in
@@ -139,11 +145,12 @@ alias upd /usr/bin/garuda-update
 alias vdir 'vdir --color=auto'
 alias wget 'wget -c '
 
+alias cd=z
 alias ls='eza --classify --icons --group-directories-first'
-alias lt 'eza -aT --color=always --group-directories-first --icons' # tree listing
+alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
 alias lf=ranger
 alias lg=lazygit
-alias nim=neovide
+alias zed=zeditor
 alias md=mkdir
 alias vim=nvim
 alias idea="~/IDE/intellij/bin/idea.sh"
@@ -212,5 +219,4 @@ function custom_colorscheme
     set -U fish_pager_color_selected_completion
 end
 
-
-custom_colorscheme
+custom_colorscheme | source

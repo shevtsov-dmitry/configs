@@ -10,9 +10,9 @@ bind \ed forward-char
 fzf_configure_bindings --directory=\ee
 
 # ENV
-# set -Ux TERM 'xterm-256color'
 set FORCE_WAYLAND --enable-features=UseOzonePlatform --ozone-platform=wayland
 set DEV_TOOLS_GRADLE_WATCH gradle java --continuous --parallel --build-cache --configuration-cache
+
 # ALIAS
 alias ls='eza --classify --icons --group-directories-first'
 alias lf=ranger
