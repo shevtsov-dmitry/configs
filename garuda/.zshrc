@@ -12,6 +12,7 @@ precmd_functions+=(set_win_title)
 
 # envs
 set FORCE_WAYLAND="--enable-features=UseOzonePlatform --ozone-platform=wayland"
+set CURRENT_SERVER_URL="http://localhost:8080"
 
 ## Plugins section: Enable fish style features
 # Use syntax highlighting
@@ -30,7 +31,6 @@ export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d"
 bindkey '^[e' fzf-file-widget
-
 
 # Arch Linux command-not-found support, you must have package pkgfile installed
 # https://wiki.archlinux.org/index.php/Pkgfile#.22Command_not_found.22_hook
@@ -92,7 +92,7 @@ SAVEHIST=10000
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[d' autosuggest-accept
-bindkey '^[f' forward-word
+bindkey '^[f' backward-word
 
 # Start typing + [Up-Arrow] - fuzzy find history forward
 if [[ -n "${terminfo[kcuu1]}" ]]; then
@@ -193,6 +193,7 @@ if [[ -n "${key[Alt-Right]}" ]]; then
 	bindkey -M vicmd "${key[Alt-Right]}" forward-word
 fi
 
+
 ## Useful aliases
 
 alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
@@ -262,6 +263,11 @@ export MCFLY_RESULTS=20
 export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_RESULTS_SORT=LAST_RUN
 eval "$(mcfly init zsh)"
+
+# lua language setup
+LUA_VERSION=$(lua -e "print(_VERSION:match('%d+%.%d+'))")
+export LUA_PATH="$LUA_PATH;/home/shd/.luarocks/share/lua/$LUA_VERSION/?.lua;/home/shd/.luarocks/share/lua/$LUA_VERSION/?/init.lua"
+export LUA_CPATH="$LUA_CPATH;/home/shd/.luarocks/lib/lua/$LUA_VERSION/?.so"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

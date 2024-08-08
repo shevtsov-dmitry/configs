@@ -172,10 +172,6 @@ alias jctl 'journalctl -p 3 -xb'
 # Recent installed packages
 alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 
-## Run fastfetch if session is interactive
-# if status --is-interactive && type -q fastfetch
-#     fastfetch --config neofetch.jsonc
-# end
 
 oh-my-posh init fish --config /usr/share/oh-my-posh/themes/space.omp.json | source
 
@@ -219,4 +215,12 @@ function custom_colorscheme
     set -U fish_pager_color_selected_completion
 end
 
-custom_colorscheme | source
+custom_colorscheme
+
+# Get Lua version
+set -l LUA_VERSION (lua -e "print(_VERSION:match('%d+%.%d+'))")
+
+# Update LUA_PATH
+set -gx LUA_PATH "$LUA_PATH;/home/shd/.luarocks/share/lua/$LUA_VERSION/?.lua;/home/shd/.luarocks/share/lua/$LUA_VERSION/?/init.lua"
+# Update LUA_CPATH
+set -gx LUA_CPATH "$LUA_CPATH;/home/shd/.luarocks/lib/lua/$LUA_VERSION/?.so"
