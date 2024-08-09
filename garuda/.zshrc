@@ -210,6 +210,7 @@ alias la='exa -al --color=always --group-directories-first --icons' # preferred 
 alias lf=ranger
 alias lg=lazygit
 alias zed=zeditor
+alias mdprev=frogmouth
 alias md=mkdir
 alias c=clear
 alias e=exit
