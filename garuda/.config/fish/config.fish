@@ -148,6 +148,7 @@ alias wget 'wget -c '
 alias cd=z
 alias ls='eza --classify --icons --group-directories-first'
 alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
+alias mdprev=frogmouth
 alias lf=ranger
 alias lg=lazygit
 alias zed=zeditor
