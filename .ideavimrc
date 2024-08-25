@@ -51,10 +51,12 @@ map <leader>fe <Action>(GotoUrlAction)
 map <leader>ff <Action>(GotoFile)
 map <leader>fg <Action>(FindInPath)
 map <leader>fa <Action>(GotoAction)
+map <leader>ca <Action>(GotoAction)
 map <leader>fs <Action>(GotoSymbol)
 map <leader>fr <Action>(RecentFiles)
 map <leader>fd <Action>(HelpDiagnosticTools)
 map <leader>ft <Action>(TextSearchAction)
+map <leader>f/ <Action>(TextSearchAction)
 map <leader>/ <Action>(Find)
 
 " Run
