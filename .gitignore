@@ -1,0 +1,23 @@
+# ignore all except pattern
+/*
+
+# directories
+!alacritty
+!fish
+!foot
+!hypr
+!kitty
+!ranger
+!swaylock
+!swaync
+!tmux
+!waybar
+!wofi
+!wpaperd
+!zed
+
+# files
+!.gitignore
+!plasma-localerc
+!starship.toml
+!starship_cat.toml
