@@ -1,1 +1,0 @@
-# yay -S --needed swaylock-effects-git rofi-lbonn-wayland-git
