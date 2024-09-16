@@ -2,6 +2,7 @@
 set SERVER_URL http://localhost:8080
 set CLIENT_URL http://localhost:5173
 set OLLAMA_MODELS /home/shd/.ollama/models
+
 set FORCE_WAYLAND --enable-features=UseOzonePlatform --ozone-platform=wayland
 set DEV_TOOLS_GRADLE_WATCH gradle java --continuous --parallel --build-cache --configuration-cache
 set EDITOR nvim
@@ -144,15 +145,14 @@ alias vdir 'vdir --color=auto'
 alias wget 'wget -c '
 
 alias cd=z
+alias lf=y
 alias ls='eza --classify --icons --group-directories-first'
 alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
 alias mdprev=frogmouth
-alias lf=ranger
 alias lg=lazygit
 alias zed=zeditor
 alias md=mkdir
 alias vim=nvim
-alias idea="~/IDE/intellij/bin/idea.sh"
 
 # Get fastest mirrors
 alias mirror 'sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
@@ -172,7 +172,7 @@ alias jctl 'journalctl -p 3 -xb'
 alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 
 
-oh-my-posh init fish --config /usr/share/oh-my-posh/themes/space.omp.json | source
+# oh-my-posh init fish --config /usr/share/oh-my-posh/themes/space.omp.json | source
 
 function custom_colorscheme
     set -U fish_color_normal normal
@@ -215,6 +215,15 @@ function custom_colorscheme
 end
 
 custom_colorscheme
+
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
 
 # Get Lua version
 set -l LUA_VERSION (lua -e "print(_VERSION:match('%d+%.%d+'))")
