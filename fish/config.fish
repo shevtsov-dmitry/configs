@@ -232,3 +232,5 @@ set -l LUA_VERSION (lua -e "print(_VERSION:match('%d+%.%d+'))")
 set -gx LUA_PATH "$LUA_PATH;/home/shd/.luarocks/share/lua/$LUA_VERSION/?.lua;/home/shd/.luarocks/share/lua/$LUA_VERSION/?/init.lua"
 # Update LUA_CPATH
 set -gx LUA_CPATH "$LUA_CPATH;/home/shd/.luarocks/lib/lua/$LUA_VERSION/?.so"
+
+fish_add_path /home/shd/.spicetify

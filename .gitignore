@@ -21,3 +21,7 @@
 !plasma-localerc
 !starship.toml
 !starship_cat.toml
+!.ideavimrc
+!.bashrc
+!.zshrc
+!.ignore
