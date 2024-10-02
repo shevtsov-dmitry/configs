@@ -1,51 +1,45 @@
+export SERVER_URL=http://localhost:8080
+export CLIENT_URL=http://localhost:5173
+export USER_PSQL_PASSWORD=123123
+
+export EDITOR=nvim
+
 # aliases
 alias vim=nvim
 alias c=clear
 alias ls='eza --classify --icons --group-directories-first'
-alias lf=ranger
+alias lf=yazi
 alias lg=lazygit
-alias nim=neovide
 alias md=mkdir
 alias ca='bat -p'
 alias idea="~/IDE/intellij/bin/idea.sh"
 
-# envs
-set FORCE_WAYLAND="--enable-features=UseOzonePlatform --ozone-platform=wayland"
+# Plugin manager
+source "$HOME/.config/zsh/antigen.zsh"
 
 
-# Init zinit
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+antigen theme robbyrussell
 
-if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle pip
+antigen bundle command-not-found
 
-source "${ZINIT_HOME}/zinit.zsh"
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+# Tell Antigen that you're done.
+antigen apply
 
 # theme like oh my posh
-eval "$(starship init zsh)"
-
-# zinit light zsh-users/zsh-syntax-highlighting
-zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-
-# Add in snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::aws
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubectx
-zinit snippet OMZP::command-not-found
+# eval "$(starship init zsh)"
 
 # History
 HISTSIZE=5000
+SAVEHIST=3000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -57,26 +51,12 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
-
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+# eval "$(fzf --zsh)"
+# eval "$(zoxide init --cmd cd zsh)"
 
 # bindings
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[d' autosuggest-accept
 bindkey '^[f' forward-word
+#
