@@ -91,7 +91,7 @@ end
 
 # BINDINGS
 # ALT = \e , CTRL = \c
-bind --erase \e\x20
+bind --mode insert \e\x20 true
 bind --mode insert \ed forward-char
 bind --mode insert \ef forward-word
 bind --mode insert \e\x7F backward-kill-word # \x7F = Backspace
