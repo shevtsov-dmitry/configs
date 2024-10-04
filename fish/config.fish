@@ -6,6 +6,7 @@ set OLLAMA_MODELS /home/shd/.ollama/models
 set FORCE_WAYLAND --enable-features=UseOzonePlatform --ozone-platform=wayland
 set DEV_TOOLS_GRADLE_WATCH gradle java --continuous --parallel --build-cache --configuration-cache
 set EDITOR nvim
+set ENABLE_YOUTUBE ciadpi -i 127.0.0.1 -p 10801 -s 2
 
 ## Set values
 # Hide welcome message & ensure we are reporting fish as shell
@@ -44,16 +45,10 @@ if test -d ~/Applications/depot_tools
     end
 end
 
-
 ## Starship prompt
 if status --is-interactive
     source ("/usr/bin/starship" init fish --print-full-init | psub)
 end
-
-
-## Advanced command-not-found hook
-# source /usr/share/doc/find-the-command/ftc.fish
-
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
@@ -94,8 +89,10 @@ function backup --argument filename
     cp $filename $filename.bak
 end
 
-# BINDINGS
-bind \ed forward-char
+# BINDINGS ALT = \e , CTRL = \c , \x7F = Backspace
+bind --mode insert \ed forward-char
+bind --mode insert \ef forward-word
+bind --mode insert \e\x7F backward-kill-word
 fzf_configure_bindings --directory=\ee
 
 # Copy DIR1 DIR2
