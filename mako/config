@@ -1,0 +1,13 @@
+anchor=bottom-right
+default-timeout=5000
+
+# catpuccin colors
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#cba6f7
+progress-color=over #313244
+outer-margin=25
+# top , left-right , bottom
+# margin=0,25,0
+[urgency=high]
+border-color=#fab387
