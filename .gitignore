@@ -2,19 +2,20 @@
 /*
 
 # directories
-!alacritty
-!fish
-!foot
-!hypr
-!kitty
-!ranger
-!swaylock
-!swaync
-!tmux
-!waybar
-!wofi
-!wpaperd
-!zed
+!feh/
+!alacritty/
+!fish/
+!foot/
+!hypr/
+!kitty/
+!ranger/
+!swaylock/
+!swaync/
+!tmux/
+!waybar/
+!wofi/
+!wpaperd/
+!zed/
 
 # files
 !.gitignore
