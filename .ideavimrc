@@ -68,7 +68,7 @@ map <leader>rt <Action>(RunClass)
 map <leader>gk <Action>(ActivateCommitToolWindow)
 map <leader>gK <Action>(Vcs.Push)
 " Debug
-map <leader>tb <Action>(ToggleLineBreakpoint)
+map tb <Action>(ToggleLineBreakpoint)
 map <leader>dd <Action>(Resume)
 map <leader>dr <Action>(Debug)
 map <leader>dq <Action>(Stop)
