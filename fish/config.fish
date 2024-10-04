@@ -89,10 +89,12 @@ function backup --argument filename
     cp $filename $filename.bak
 end
 
-# BINDINGS ALT = \e , CTRL = \c , \x7F = Backspace
+# BINDINGS
+# ALT = \e , CTRL = \c
+bind --erase \e\x20
 bind --mode insert \ed forward-char
 bind --mode insert \ef forward-word
-bind --mode insert \e\x7F backward-kill-word
+bind --mode insert \e\x7F backward-kill-word # \x7F = Backspace
 fzf_configure_bindings --directory=\ee
 
 # Copy DIR1 DIR2
