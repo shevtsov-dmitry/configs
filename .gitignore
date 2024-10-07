@@ -3,6 +3,7 @@
 
 # directories
 !mako/
+!.local/
 !feh/
 !alacritty/
 !fish/
