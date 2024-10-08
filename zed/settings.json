@@ -18,7 +18,7 @@
     "vim_mode": true,
     "ui_font_size": 16,
     // "buffer_font_family": "Martian Mono",
-    "buffer_font_family": "Hack",
+    "buffer_font_family": "Hack Nerd Font",
     // "buffer_font_family": "CommitMono Nerd Font",
     "buffer_font_size": 16,
     "theme": {
@@ -26,7 +26,7 @@
         // "light": "One Light",
         // "light": "Xcode Classic Light",
         "light": "Catppuccin Latte",
-        "dark": "Catppuccin Frappé"
+        "dark": "One Dark"
     },
     "lsp": {
         "java": {

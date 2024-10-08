@@ -91,10 +91,10 @@ end
 
 # BINDINGS
 # ALT = \e , CTRL = \c
-bind --mode insert \e\x20 true
-bind --mode insert \ed forward-char
-bind --mode insert \ef forward-word
-bind --mode insert \e\x7F backward-kill-word # \x7F = Backspace
+# bind --mode insert \e\x20 true
+bind \ed forward-char
+bind \ef forward-word
+bind \e\x7F backward-kill-word # \x7F = Backspace
 fzf_configure_bindings --directory=\ee
 
 # Copy DIR1 DIR2
