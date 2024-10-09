@@ -15,28 +15,40 @@ config.keys = {
 	-- Panes navigation
 	{
 		key = "j",
-		mods = "CTRL",
+		mods = "ALT",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{
 		key = "k",
-		mods = "CTRL",
+		mods = "ALT",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "h",
-		mods = "CTRL",
+		mods = "ALT",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "l",
-		mods = "CTRL",
+		mods = "ALT",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "j",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Down"),
+	},
+
+	-- Create/Kill the tab
+	{
+		key = "n",
+		mods = "ALT",
+		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
+	},
+	{
+		key = "`",
+		mods = "ALT",
+		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 
 	-- Pane resize
@@ -138,6 +150,12 @@ config.keys = {
 
 	{
 		key = "9",
+		mods = "ALT",
+		action = wezterm.action.ActivateTab(-1),
+	},
+
+	{
+		key = "0",
 		mods = "ALT",
 		action = wezterm.action.ActivateTab(-1),
 	},
