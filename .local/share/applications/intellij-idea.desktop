@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Intellij Idea
+Comment=Launch java IDE.
+Exec=/home/shd/.local/apps/intellij/bin/idea
+Icon=/home/shd/.local/apps/intellij/bin/idea.png
+Terminal=false
+Type=Application
+Categories=Development;IDE;

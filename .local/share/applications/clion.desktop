@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Clion
+Comment=Launch Clion IDE.
+Exec=/home/shd/.local/apps/clion/bin/clion
+Icon=/home/shd/.local/apps/clion/bin/clion.png
+Terminal=false
+Type=Application
+Categories=Development;IDE;
