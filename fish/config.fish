@@ -127,6 +127,7 @@ end
 
 
 # Common use
+
 alias big 'expac -H M "%m\t%n" | sort -h | nl' # Sort installed packages according to size in MB (expac must be installed)
 alias dir 'dir --color=auto'
 alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
@@ -145,6 +146,8 @@ alias wget 'wget -c '
 
 alias cd=z
 alias lf=y
+alias c=clear
+alias e=exit
 alias ls='eza --classify --icons --group-directories-first'
 alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
 alias mdprev=frogmouth

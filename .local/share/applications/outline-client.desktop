@@ -5,4 +5,6 @@ Exec=/home/shd/.local/apps/outline-client/Outline-Client.AppImage
 Icon=/home/shd/.local/apps/outline-client/outline-client.png
 Terminal=false
 Type=Application
-Categories=VPN;
+Categories=Network;
+StartupWMClass=outline
+
