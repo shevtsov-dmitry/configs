@@ -4,6 +4,8 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+config.enable_wayland = true
+
 -- For example, changing the color scheme:
 config.color_scheme = "Oxocarbon Dark (Gogh)"
 config.font = wezterm.font("Hack Nerd Font")
