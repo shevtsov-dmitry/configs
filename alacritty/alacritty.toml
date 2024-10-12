@@ -14,6 +14,7 @@ offset.y = 2
 [font.normal]
 #CaskaydiaCove Nerd Font
 #NotoMono Nerd Font
+# family = "Hack Nerd Font"
 family = "Hack Nerd Font"
 style = "Regular"
 

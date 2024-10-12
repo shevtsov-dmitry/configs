@@ -7,10 +7,26 @@ local config = wezterm.config_builder()
 config.enable_wayland = true
 
 -- For example, changing the color scheme:
-config.color_scheme = "Oxocarbon Dark (Gogh)"
+config.color_scheme = "Apprentice (base16)"
 config.font = wezterm.font("Hack Nerd Font")
 config.window_decorations = "NONE"
 config.line_height = 1.2
+
+config.window_background_opacity = 1
+
+-- config.window_background_image = "/home/shd/Pictures/pinterest/cammy.jpg"
+config.window_background_image = "/home/shd/Pictures/Gifs/dark-water-high-fps.webp"
+config.window_background_image_hsb = {
+	-- Darken the background image by reducing it to 1/3rd
+	brightness = 0.2,
+
+	-- You can adjust the hue by scaling its value.
+	-- a multiplier of 1.0 leaves the value unchanged.
+	hue = 1.0,
+
+	-- You can adjust the saturation also.
+	saturation = 0.7,
+}
 
 config.keys = {
 

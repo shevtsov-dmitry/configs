@@ -45,12 +45,13 @@ color: @base04;
 animation-name: fadeIn;
 animation-duration: 0.6s;
 background-color: transparent;
-font-family: Ubuntu Mono;
+font-family: Cantarell;
 /* font-size:14; */
 }
 
 #input {
 border: none;
+text: white;
 background-color: rgba (0,0,0,0.6);
 border-radius: 5px;
 margin: 4px 4px 8px 4px;

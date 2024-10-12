@@ -11,26 +11,26 @@
     "assistant": {
         "default_model": {
             "provider": "ollama",
-            "model": "codellama:7b"
+            "model": "codellama"
         },
         "version": "2"
     },
     "vim_mode": true,
-    "ui_font_size": 16,
+    "ui_font_size": 15,
     // "buffer_font_family": "Martian Mono",
     "buffer_font_family": "Hack Nerd Font",
     // "buffer_font_family": "CommitMono Nerd Font",
-    "buffer_font_size": 16,
+    "buffer_font_size": 15,
     "theme": {
         "mode": "dark", // system, dark, light
         // "light": "One Light",
         // "light": "Xcode Classic Light",
         "light": "Catppuccin Latte",
-        "dark": "One Dark"
+        "dark": "Ayu Dark"
     },
     "lsp": {
         "java": {
-            "java.jdt.ls.lombokSupport.enabled:": false
+            "java.jdt.ls.lombokSupport.enabled:": true
         }
     },
     "languages": {
@@ -44,6 +44,13 @@
             "code_actions_on_format": {
                 "source.fixAll.eslint": true
             }
+        },
+        "Java": {
+            "formatter": "prettier",
+            // "prettier": "on",
+            // "indent_guides": true,
+            "tab_size": 4,
+            "format_on_save": "on"
         }
     },
     "prettier": {
