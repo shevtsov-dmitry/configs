@@ -21,29 +21,24 @@ Plug 'preservim/nerdtree'
 
 " plug
 set surround
+set easymotion
+
+map s <Plug>(easymotion-s)
 
 " IDEA stuff
 set ideajoin
 set idearefactormode=keep
 set ideamarks
 
-" Highlight copied text
-" Mappings
-
-" map <leader>e <Action>(ActivateProjectToolWindow)
-
-" map <leader>qq <Action>(CloseTab)
-
 map <leader>[ <Action>(GotoPreviousError)
 map <leader>] <Action>(GotoNextError)
 
-"
-map <leader>tm <Action>(ToggleBookmark)
 
 " Navigation
 map <leader>gg <Action>(JumpToLastChange)
-map gn <Action>(GotoNextBookmarkInEditor)
-map gp <Action (GotoPreviousBookmarkInEditor)
+map <leader>tm <Action>(ToggleBookmark)
+map mn <Action>(GotoNextBookmarkInEditor)
+map ml <Action (GotoPreviousBookmarkInEditor)
 
 " Search
 map <leader>fc <Action>(GotoClass)
