@@ -9,6 +9,7 @@ go/
 .gnome/
 .oh-my-zsh/
 .urvxt/
+.build/
 .pki/
 .cargo/
 .cache/
