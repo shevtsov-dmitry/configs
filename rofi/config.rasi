@@ -1,0 +1,8 @@
+//@theme "/home/shd/.local/share/rofi/themes/squared-nord.rasi"
+//@theme "/usr/share/rofi/themes/c64.rasi"
+//@theme "/home/shd/.local/share/rofi/themes/squared-nord.rasi"
+@theme "/home/shd/.local/share/rofi/themes/spotlight-dark.rasi"
+
+configuration {
+  show-icons: true;
+}

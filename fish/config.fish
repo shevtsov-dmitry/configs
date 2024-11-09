@@ -143,16 +143,16 @@ alias untar 'tar -zxvf '
 alias upd /usr/bin/garuda-update
 alias vdir 'vdir --color=auto'
 alias wget 'wget -c '
-
 alias cd=z
 alias lf=y
 alias c=clear
+alias zigm="$HOME/.local/bin/zigm-nominated/zig"
+alias inf=tldr
 alias e=exit
 alias ls='eza --classify --icons --group-directories-first'
 alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
 alias mdprev=frogmouth
 alias lg=lazygit
-alias zed=zeditor
 alias md=mkdir
 alias vim=nvim
 
