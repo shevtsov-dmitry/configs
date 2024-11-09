@@ -140,6 +140,7 @@ alias psmem10 'ps auxf | sort -nr -k 4 | head -10'
 alias rmpkg 'sudo pacman -Rdd'
 alias tarnow 'tar -acf '
 alias untar 'tar -zxvf '
+alias clip 'xclip -selection primary'
 alias upd /usr/bin/garuda-update
 alias vdir 'vdir --color=auto'
 alias wget 'wget -c '
