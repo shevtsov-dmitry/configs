@@ -209,7 +209,7 @@ bindsym $mod+t floating toggle
 bindsym $mod+g sticky toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+bindsym $mod+z focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -347,8 +347,8 @@ exec --no-startup-id dex --autostart --environment i3
 # bindsym $mod+$alt+Delete exec --no-startup-id i3exit logout
 bindsym $mod+$alt+Delete exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
-#exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'
+# Toggle between English (US) and Russian keyboard layouts
+exec setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 
 # start conky:
 #exec_always --no-startup-id conky
@@ -397,6 +397,19 @@ exec_always --no-startup-id autotiling
 # Autostart apps as you like
 #exec --no-startup-id sleep 2 && xfce4-terminal
 #exec --no-startup-id sleep 3 && thunar
+
+
+#####################################
+# Application menu handled by rofi: #
+#####################################
+
+## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
+
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun 
+bindsym $mod+w exec --no-startup-id rofi -show window \
+exec --no-startup-id greenclip daemon
+bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
+    config ~/.config/rofi/rofidmenu.rasi
 
 ###############
 # system tray #
@@ -460,13 +473,13 @@ set $yellowbrown	#e1b700
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	$mediumgrey
+client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	$white
 client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
 client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
 client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 
 ############################################
-# bar settings (input comes from i3blocks) #
+# bottom bar settings (input comes from i3blocks) #
 ############################################
 
 # Start i3bar to display a workspace bar
@@ -500,45 +513,3 @@ strip_workspace_numbers yes
 	}
 }
 
-# you can add different bars for multidisplay setups on each display:
-# set output HDMI-0 to the display you want the bar, --transparency can be set.
-# Transparency needs rgba color codes to be used where the last two letters are the transparency factor see here:
-# https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-# #08052be6 --> e6=90%
-
-# bar {
-#	font pango: Noto Sans Regular 10
-#	status_command i3blocks -c ~/.config/i3/i3blocks-2.conf
-#	i3bar_command i3bar --transparency
-#	output HDMI-0
-#	position bottom
-#
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-#strip_workspace_numbers yes
-##strip_workspace_name no
-#
-#	colors {
-#		separator          $purple
-#		background         $darkbluetrans
-#        	statusline         $white
-#					border		bg		txt		indicator
-#		focused_workspace	$lighterblue	$lighterblue	$darkblue	$purple
-#		active_workspace	$lightdblue	$lightdblue	$darkblue	$purple
-#		inactive_workspace	$darkblue	$darkblue	$lightdblue	$purple
-#		urgent_workspace	$urgentred	$urgentred	$white		$purple
-#	}
-#}
-
-#####################################
-# Application menu handled by rofi: #
-#####################################
-
-## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
-
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun 
-bindsym $mod+w exec --no-startup-id rofi -show window \
-exec --no-startup-id greenclip daemon
-bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
-    config ~/.config/rofi/rofidmenu.rasi
