@@ -1,4 +1,5 @@
-# REQUIRED PACKAGES: i3blocks rofi alacritty maim greenclip autotiling
+# REQUIRED PACKAGES: i3blocks rofi alacritty maim greenclip autotiling dunst
+# PACKAGES FOR I3BLOCKS: xkblayout-state nvidia-smi
 
 # exec --no-startup-id ~/set_once.sh
 # This file is a modified version based on default i3-config-wizard config
@@ -129,6 +130,12 @@ bindcode $mod+$alt+19    move container to workspace  $ws10
 # keybindings for different actions: #
 ######################################
 
+
+bindsym $mod+F1 exec --no-startup-id nemo
+bindsym $mod+F2 exec --no-startup-id firefox
+bindsym $mod+F3 exec --no-startup-id thunderbird
+bindsym $mod+F4 exec --no-startup-id lxappearance
+
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
 
@@ -137,6 +144,8 @@ bindsym $mod+$alt+q kill
 
 # exit-menu
 bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
+
+bindsym $mod+$alt+m exec --no-startup-id ~/.config/i3/scripts/toggle-theme.sh
 
 bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
@@ -355,7 +364,7 @@ exec setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec --no-startup-id ~/.screenlayout/monitor.sh
+# exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # monitor/display/screen managment
 exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 144
@@ -470,17 +479,19 @@ set $darkgrey		#383c4a
 set $grey		#b0b5bd
 set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
+set $windowbordercolor #dee2e6
 
+for_window [class=".*"] border pixel 2
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	$white
+client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	 $windowbordercolor
 client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
 client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
 client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 
-############################################
+###################################################
 # bottom bar settings (input comes from i3blocks) #
-############################################
+###################################################
 
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
