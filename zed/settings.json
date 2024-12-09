@@ -11,7 +11,7 @@
     "assistant": {
         "default_model": {
             "provider": "ollama",
-            "model": "codellama"
+            "model": "codellama:latest"
         },
         "version": "2"
     },
@@ -26,7 +26,7 @@
         // "light": "One Light",
         // "light": "Xcode Classic Light",
         "light": "Catppuccin Latte",
-        "dark": "Ayu Dark"
+        "dark": "Aura Dark"
     },
     "lsp": {
         "java": {

@@ -1,5 +1,4 @@
-# REQUIRED PACKAGES: i3blocks rofi alacritty maim greenclip autotiling dunst
-# PACKAGES FOR I3BLOCKS: xkblayout-state nvidia-smi
+# REQUIRED PACKAGES: i3blocks rofi alacritty maim greenclip autotiling dunst feh xkblayout-state 
 
 # exec --no-startup-id ~/set_once.sh
 # This file is a modified version based on default i3-config-wizard config
@@ -370,7 +369,7 @@ exec setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 144
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill "/home/shd/Pictures/Wallpapers/sitting back fantasy.jpg"
+exec --no-startup-id sleep 1 && feh --bg-fill "/home/shd/Pictures/Wallpapers/"
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -415,7 +414,8 @@ exec_always --no-startup-id autotiling
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun 
-bindsym $mod+w exec --no-startup-id rofi -show window \
+bindsym $mod+w exec --no-startup-id rofi -show window 
+
 exec --no-startup-id greenclip daemon
 bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
     config ~/.config/rofi/rofidmenu.rasi
