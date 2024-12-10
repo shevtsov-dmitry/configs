@@ -1,4 +1,4 @@
-# REQUIRED PACKAGES: i3blocks rofi alacritty maim greenclip autotiling dunst feh xkblayout-state 
+# REQUIRED PACKAGES: i3blocks rofi alacritty maim greenclip autotiling dunst feh xkblayout-state  playerctl
 
 # exec --no-startup-id ~/set_once.sh
 # This file is a modified version based on default i3-config-wizard config
@@ -130,11 +130,6 @@ bindcode $mod+$alt+19    move container to workspace  $ws10
 ######################################
 
 
-bindsym $mod+F1 exec --no-startup-id nemo
-bindsym $mod+F2 exec --no-startup-id firefox
-bindsym $mod+F3 exec --no-startup-id thunderbird
-bindsym $mod+F4 exec --no-startup-id lxappearance
-
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
 
@@ -236,8 +231,10 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume_br
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
 
 # gradular volume control
-bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
-bindsym $mod+XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
+# bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
+# bindsym $mod+XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 3%+ && pkill -RTMIN+1 i3blocks
+bindsym $mod+XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 3%- && pkill -RTMIN+1 i3blocks
 
 # mute
 #bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle && killall -USR1 i3blocks
@@ -356,7 +353,7 @@ exec --no-startup-id dex --autostart --environment i3
 bindsym $mod+$alt+Delete exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Toggle between English (US) and Russian keyboard layouts
-exec setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
+exec --no-startup-id setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 
 # start conky:
 #exec_always --no-startup-id conky

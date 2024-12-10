@@ -119,15 +119,7 @@ end
 ## Useful aliases
 
 
-# Replace some more things with better alternatives
-# alias cat 'bat --style header --style snip --style changes --style header'
-if not test -x /usr/bin/yay; and test -x /usr/bin/paru
-    alias yay paru
-end
-
-
-# Common use
-
+alias aur yay
 alias big 'expac -H M "%m\t%n" | sort -h | nl' # Sort installed packages according to size in MB (expac must be installed)
 alias dir 'dir --color=auto'
 alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
