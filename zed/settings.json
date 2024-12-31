@@ -26,7 +26,7 @@
         // "light": "One Light",
         // "light": "Xcode Classic Light",
         "light": "Catppuccin Latte",
-        "dark": "Aura Dark"
+        "dark": "One Dark"
     },
     "lsp": {
         "java": {

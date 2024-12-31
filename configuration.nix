@@ -12,12 +12,12 @@ in {
       ./hardware-configuration.nix
     ];
 
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-   nix.settings.extra-experimental-features = [ "nix-command" "flakes" ];
-
+  nix.settings.extra-experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -50,8 +50,8 @@ in {
   # Configure keymap in X11
   services.xserver = {
     xkb.layout = "us,ru";
-    xkbVariant = "";
-    xkbOptions = "grp:win_space_toggle";
+    xkb.variant = "";
+    xkb.options = "grp:win_space_toggle";
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -65,7 +65,6 @@ in {
   };
 
   hardware.graphics.enable = true;
-  hardware.opengl.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shd = {
@@ -85,15 +84,53 @@ in {
     xwayland.enable = true;
   };
 
- # Docker 
-virtualisation.docker.enable = true;
- 
 
+ # Docker 
+virtualisation.docker = {
+     enable = true;
+     enableOnBoot= true;
+     # enableNvidia = true;
+}; 
+
+# services.ollama = {
+#   enable = true;
+#   acceleration = "cuda";
+# };
 
 virtualisation.docker.rootless = {
   enable = true;
   setSocketVariable = true;
 };
+
+qt = {
+  enable = true;
+  platformTheme = "gnome";
+  style = "adwaita-dark";
+};
+
+
+# home-manager.users.myuser = {
+#  dconf = {
+#    enable = true;
+#    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+#  };
+#};
+
+#  gtk = {
+#    enable = true;
+#    theme = {
+#      name = "orchis-theme";
+#      package = pkgs.orchis-theme;
+#    };
+#    iconTheme = {
+#      name = "Adwaita";
+#      package = pkgs.adwaita-icon-theme;
+#    };
+#    cursorTheme = {
+#      name = "Adwaita";
+#      package = pkgs.adwaita-icon-theme;
+#    };
+#  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -103,12 +140,22 @@ virtualisation.docker.rootless = {
   environment.systemPackages = with pkgs; [
     # unstable.nerd-fonts.iosevka
     # unstable.nerd-fonts.hack
+    
+    ### THEME ###
+    dconf
+    adwaita-qt
+    adwaita-qt6
+    adwaita-icon-theme
+    tokyonight-gtk-theme 
+    lxappearance
 
     ### SYSTEM ###
+    playerctl
     i3status
     sddm-sugar-dark
     picom
     zip
+    xfce.tumbler
     unzip
     autotiling
     wpaperd
@@ -132,6 +179,8 @@ virtualisation.docker.rootless = {
     ### CLI ###
     eza
     zoxide
+    btop
+    bat
     fd
     ripgrep
     fzf
@@ -140,8 +189,8 @@ virtualisation.docker.rootless = {
     wget
     unstable.yazi
     feh
+    spicetify-cli
     chafa
-
 
     xclip
     wl-clipboard
@@ -158,6 +207,7 @@ virtualisation.docker.rootless = {
     foot
     xfce.thunar
     chromium
+    spotify
     neovim
 
     ### LANGUAGES ###
@@ -180,6 +230,11 @@ virtualisation.docker.rootless = {
     cmake          
     clang          
 
+    # Databases
+    mongosh
+    mongodb-ce
+    minio
+    postgresql
   ];
 
 fonts.packages = with pkgs; [
@@ -192,7 +247,7 @@ fonts.packages = with pkgs; [
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
   services.xserver.windowManager.i3.package = pkgs.i3-gaps;
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   # services.xserver.displayManager.sddm.enable = false;
   # services.xserver.windowManager.hyprland.enable = false;
   # services.xserver.desktopManager.hyprland.enable = false;
