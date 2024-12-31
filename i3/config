@@ -1,4 +1,4 @@
-# REQUIRED PACKAGES: i3blocks rofi alacritty maim greenclip autotiling dunst feh xkblayout-state  playerctl
+# REQUIRED PACKAGES: i3blocks rofi alacritty maim greenclip autotiling dunst feh 
 
 # exec --no-startup-id ~/set_once.sh
 # This file is a modified version based on default i3-config-wizard config

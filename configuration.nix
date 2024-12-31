@@ -16,6 +16,9 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+   nix.settings.extra-experimental-features = [ "nix-command" "flakes" ];
+
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -68,9 +71,29 @@ in {
   users.users.shd = {
     isNormalUser = true;
     description = "shd";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"  ];
     packages = with pkgs; [];
   };
+
+  # Wayland 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+ programs.hyprland = {
+    # Install the packages from nixpkgs
+    enable = true;
+    # Whether to enable XWayland
+    xwayland.enable = true;
+  };
+
+ # Docker 
+virtualisation.docker.enable = true;
+ 
+
+
+virtualisation.docker.rootless = {
+  enable = true;
+  setSocketVariable = true;
+};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -84,31 +107,79 @@ in {
     ### SYSTEM ###
     i3status
     sddm-sugar-dark
-    xclip
-    wl-clipboard
     picom
+    zip
+    unzip
     autotiling
+    wpaperd
+# clipboard
+    haskellPackages.greenclip
+    cliphist
+    # screenshots
+    maim
+    slurp 
+    grim  
+# notications
+    dunst
+    mako
     # xrandr
     dmenu
-    # wofi
-    # hyprland
-    # waybar
+    wofi
+    unstable.hyprland
+    waybar
     rofi
 
     ### CLI ###
+    eza
+    zoxide
+    fd
+    ripgrep
+    fzf
+    jq
+    curlHTTP3
+    wget
+    unstable.yazi
+    feh
+    chafa
+
+
+    xclip
+    wl-clipboard
     starship
     lazygit
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     fish
-    wget
     git
 
     ### APPS ###
+	unstable.ghostty
+    unstable.zed-editor
     alacritty
     foot
+    xfce.thunar
     chromium
-    unstable.zed-editor
     neovim
+
+    ### LANGUAGES ###
+    # js
+    nodejs_23
+
+    # java
+    temurin-bin-23
+    maven
+    gradle
+
+    # rust
+    cargo
+    rustc
+
+    # C/C++
+    gcc           
+    gnumake           
+    pkg-config     # Tool to manage library paths
+    cmake          
+    clang          
+
   ];
 
 fonts.packages = with pkgs; [
@@ -153,5 +224,4 @@ fonts.packages = with pkgs; [
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 }
-
 
