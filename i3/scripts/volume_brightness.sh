@@ -5,7 +5,7 @@
 
 # See README.md for usage instructions
 bar_color="#7f7fff"
-volume_step=1
+volume_step=3
 brightness_step=2.5
 max_volume=100
 
