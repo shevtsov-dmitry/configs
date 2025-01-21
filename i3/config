@@ -1,4 +1,4 @@
-# REQUIRED PACKAGES: i3blocks rofi alacritty contour maim greenclip autotiling dunst feh playerctl tumbler thunar
+# REQUIRED PACKAGES: i3blocks rofi alacritty xfce4-terminal maim greenclip autotiling dunst feh playerctl tumbler thunar
 
 # exec --no-startup-id ~/set_once.sh
 # This file is a modified version based on default i3-config-wizard config
@@ -302,9 +302,9 @@ for_window [class=Thunar] focus
 for_window [class=Thunar] floating enable
 for_window [class=Thunar] resize set 800 800
 
-for_window [class=contour] focus
-for_window [class=contour] floating enable
-for_window [class=contour] resize set 800 600
+for_window [class=Xfce4-terminal] focus
+for_window [class=Xfce4-terminal] floating enable
+for_window [class=Xfce4-terminal] resize set 850 600
 
 ##############
 # compositor #
