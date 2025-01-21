@@ -42,7 +42,7 @@ fzf_configure_bindings --directory=\ee
 
 ## Useful aliases
 alias aur yay
-alias clip 'xclip -selection primary'
+alias copy 'xclip -selection clipboard'
 alias wget 'wget -c '
 alias cd=z
 alias lf=y
