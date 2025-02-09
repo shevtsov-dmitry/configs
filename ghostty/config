@@ -2,6 +2,7 @@ theme = Bright Lights
 cursor-style = block
 cursor-style-blink = true
 shell-integration-features = no-cursor
+gtk-custom-css = tab-style.css
 # font-family = Drafting* Mono Regular
 font-family = IosevkaTerm Nerd Font
 # font-family = Drafting* Mono Regular

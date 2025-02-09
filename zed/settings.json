@@ -11,7 +11,7 @@
     "assistant": {
         "default_model": {
             "provider": "ollama",
-            "model": "codellama:latest"
+            "model": "deepseek-r1:8b"
         },
         "version": "2"
     },
@@ -26,11 +26,44 @@
         // "light": "One Light",
         // "light": "Xcode Classic Light",
         "light": "Catppuccin Latte",
-        "dark": "One Dark"
+        "dark": "Rosé Pine Moon"
     },
     "lsp": {
-        "java": {
-            "java.jdt.ls.lombokSupport.enabled:": true
+        "jdtls": {
+            "initialization_options": {
+                "settings": {
+                    "java": {
+                        "settings": {
+                            "java.jdt.ls.lombokSupport.enabled:": true
+                        },
+                        "jdt": {
+                            "ls": {
+                                "lombokSupport": {
+                                    "enabled": true
+                                }
+                            }
+                        },
+                        "referencesCodeLens": {
+                            "enabled": true
+                        },
+                        "signatureHelp": {
+                            "enabled": true
+                        },
+                        "implementationsCodeLens": {
+                            "enabled": true
+                        },
+                        "format": {
+                            "enabled": true
+                        },
+                        "contentProvider": {
+                            "preferred": null
+                        },
+                        "autobuild": {
+                            "enabled": false
+                        }
+                    }
+                }
+            }
         }
     },
     "languages": {
