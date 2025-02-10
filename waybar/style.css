@@ -1,112 +1,231 @@
-/* =============================================================================
- *
- * Waybar configuration
- *
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- *
- * =========================================================================== */
- 
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
-
-
-/*
-Polar Night
-nord0  #2e3440
-nord1  #3b4252
-nord2  #434c5e
-nord3  #4c566a
-Snow Storm
-nord4  #d8dee9
-nord5  #e5e9f0
-nord6  #eceff4
-Frost
-nord7  #8fbcbb
-nord8  #88c0d0
-nord9  #81a1c1
-nord10 #5e81ac
-Aurora
-nord11 #bf616a
-nord12 #d08770
-nord13 #ebcb8b
-nord14 #a3be8c
-nord15 #b48ead
-*/
-
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
- 
-/* Reset all styles */
 
 * {
-    color: #eceff4;
-    border: 0;
-    border-radius: 0;
-    padding: 0 0;
-    font-family:Symbols Nerd Font Mono;
-    font-size: 15px;
-    margin-right: 5px;
-    margin-left: 5px;
-    padding-bottom:2px;
-   }
+    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;  /* Slightly smaller font size */
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
 
-window#waybar {
-    background:rgba (0, 0, 0, 0.5);
-    border-radius: 20px 20px 20px 20px; 
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 3px;
+    min-height: 0;
+    margin: 0.2em 0.3em 0.2em 0.3em;
+}
+
+/* The whole bar */
+#waybar {
+    background-color: transparent;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-radius: 0px;
+    margin: 0px 0px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
 }
 
 #workspaces button {
-    padding: 2px 0px;
-    border-bottom: 2px;
-    color: #eceff4;
-    border-color: #d8dee9;
-    border-style: solid;
-    margin-top:2px;
+    padding: 3px 5px;  /* Adjusted padding to reduce height */
+    margin: 3px 5px;    /* Reduced margin slightly */
+    border-radius: 6px;
+    color: @foreground;
+    background-color: #111827;
+    transition: all 0.3s ease-in-out;
+    font-size: 13px;  /* Slightly smaller font size */
 }
 
 #workspaces button.active {
-    border-color: #81a1c1;
+    color: @foreground;
+    background: #025939;
 }
 
-#clock, #battery, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #tray, #window,#custom-launcher,#custom-power,#custom-updates ,#custom-network_traffic,#custom-weather{
-    padding: 0 3px;
-    border-bottom: 2px;
-    border-style: solid;
+#workspaces button:hover {
+    background: #333333;
 }
- 
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
 
- 
-#clock {
- color:#a3be8c;
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#workspaces {
+    background-color: #111827;
+    border-radius: 14px;
+    padding: 3px 6px;  /* Adjusted padding to reduce height */
+}
+
+#window {
+    background-color: #111827;
+    font-size: 15px;   /* Slightly smaller font size */
+    font-weight: 800;
+    color: @foreground;
+    border-radius: 14px;
+    padding: 3px 6px;  /* Reduced padding */
+    margin: 2px;
+    opacity: 1;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#mode,
+#idle_inhibitor,
+#mpd,
+#bluetooth,
+#custom-hyprPicker,
+#custom-power-menu,
+#custom-spotify,
+#custom-weather,
+#custom-weather.severe,
+#custom-weather.sunnyDay,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.default {
+    background-color: #111827;
+    border-radius: 14px;
+    padding: 6px;  /* Adjusted padding */
+}
+
+#custom-screenshot_t {
+    background-color: #111827;
+    border-radius: 14px;
+    padding: 6px;
+}
+
+#custom-spotify {
+    background-color: #111827;
+    border-radius: 14px;
+    padding: 3px 12px;
+}
+
+#tray {
+    background-color: #111827;
+    border-radius: 14px;
+    padding: 6px;  /* Adjusted padding */
+}
+
+#cpu {
+    color: #fb958b;
+    background-color: #111827;
+    padding: 6px;
+}
+
+#memory {
+    color: #ebcb8b;
+    background-color: #111827;
+    padding: 6px;
+}
+
+#custom-power {
+    background-color: #111827;
+    border-radius: 14px;
+    padding: 6px;
+}
+
+#custom-storage {
+    background-color: #111827;
+    border-radius: 14px;
+    padding: 6px;
+}
+
+#custom-launcher {
+    background-color: #1b242b;
+    color: #6a92d7;
+    border-radius: 7.5px;
+    padding: 3px 6px;  /* Adjusted padding */
+}
+
+#custom-weather.severe {
+    color: #eb937d;
+}
+
+#custom-weather.sunnyDay {
+    color: #c2ca76;
+}
+
+#custom-weather.clearNight {
+    color: #cad3f5;
+}
+
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight {
+    color: #c2ddda;
+}
+
+#custom-weather.rainyDay,
+#custom-weather.rainyNight {
+    color: #5aaca5;
+}
+
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight {
+    color: #d6e7e5;
+}
+
+#custom-weather.default {
+    color: #dbd9d8;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#pulseaudio {
+    color: #7d9bba;
 }
 
 #backlight {
-    color: #ebcb8b;
+    color: #8fbcbb;
+}
+
+#clock {
+    color: #c8d2e0;
 }
 
 #battery {
-    color: #d8dee9;
+    color: #c0caf5;
 }
 
-#battery.charging {
-    color: #81a1c1;
+#battery.charging,
+#battery.full,
+#battery.plugged {
+    color: #26a65b;
 }
 
 @keyframes blink {
     to {
-        color: #4c566a;
-        background-color: #eceff4;
+        background-color: rgba(30, 34, 42, 0.5);
+        color: #abb2bf;
     }
 }
 
 #battery.critical:not(.charging) {
-    background: #bf616a;
-    color: #eceff4;
+    color: #f53c3c;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -114,72 +233,90 @@ window#waybar {
     animation-direction: alternate;
 }
 
-#cpu {
-    color:#a3be8c ;
+label:focus {
+    background-color: #000000;
 }
 
-#memory {
-    color: #d3869b;
+#disk {
+    background-color: #964b00;
 }
 
-#network.disabled {
-    color:#bf616a;
+#bluetooth {
+    color: #707d9d;
 }
 
-#network{
-    color:#a3be8c;
+#bluetooth.disconnected {
+    color: #f53c3c;
 }
 
-#network.disconnected {
-    color: #bf616a;
-}
-
-#pulseaudio {
+#network {
     color: #b48ead;
 }
 
-#pulseaudio.muted {
-    color: #3b4252;
+#network.disconnected {
+    color: #f53c3c;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
 }
 
 #temperature {
-    color: #8fbcbb;
+    background-color: #f0932b;
 }
 
 #temperature.critical {
-    color: #bf616a;
+    background-color: #eb4d4b;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
 }
 
 #idle_inhibitor {
-   color: #ebcb8b;
+    background-color: #2d3436;
 }
 
-#tray {
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
 }
 
-#custom-launcher{
-        font-size: 20px;
-        background-image: url('/home/shd/.config/waybar/launcher.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        border-style: hidden;
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
 }
 
-#custom-power{
-    border-style: hidden;
-    margin-top:2px;    
+#keyboard-state {
+    background: #97e1ad;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
 }
 
-#window{
-    border-style: hidden;
-    margin-top:1px;  
-}    
-#custom-keyboard-layout{
-   color:#d08770;
-}   
-#custom-network_traffic{
-   color:#d08770;
+#keyboard-state > label {
+    padding: 0 0px;
 }
 
-
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
