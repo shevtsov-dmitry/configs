@@ -26,7 +26,7 @@
         // "light": "One Light",
         // "light": "Xcode Classic Light",
         "light": "Catppuccin Latte",
-        "dark": "Rosé Pine Moon"
+        "dark": "Nord"
     },
     "lsp": {
         "jdtls": {
@@ -67,6 +67,11 @@
         }
     },
     "languages": {
+        "TSX": {
+            "code_actions_on_format": {
+                "source.organizeImports": true
+            }
+        },
         "JavaScript": {
             "format_on_save": {
                 "external": {
@@ -79,7 +84,7 @@
             }
         },
         "Java": {
-            "formatter": "prettier",
+            "formatter": "language_server",
             // "prettier": "on",
             // "indent_guides": true,
             "tab_size": 4,
