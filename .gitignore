@@ -1,5 +1,6 @@
 # ignore all except pattern
 /*
+tmux/plugins/
 
 # directories
 !i3/
