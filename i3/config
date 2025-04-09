@@ -1,5 +1,6 @@
 # REQUIRED PACKAGES: i3blocks rofi alacritty xfce4-terminal maim greenclip autotiling dunst feh playerctl tumbler thunar
 
+exec --no-startup-id export LANG=ru_RU.UTF-8
 # exec --no-startup-id ~/set_once.sh
 # This file is a modified version based on default i3-config-wizard config
 # source is available here:
@@ -370,11 +371,13 @@ exec --no-startup-id setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 # exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # monitor/display/screen managment
+exec --no-startup-id xrandr --output DP-1 --mode 1920x1080 --rate 144
 exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
+
 exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 60 --pos 0x1080
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill "/home/shd/Pictures/Wallpapers/"
+exec --no-startup-id sleep 1 && feh --bg-fill "/home/shd/Pictures/wallpapers/bg/"
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
