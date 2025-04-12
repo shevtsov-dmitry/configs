@@ -1,26 +1,4 @@
-# REQUIRED PACKAGES: i3blocks rofi alacritty xfce4-terminal maim greenclip autotiling dunst feh playerctl tumbler thunar
-
-exec --no-startup-id export LANG=ru_RU.UTF-8
-# exec --no-startup-id ~/set_once.sh
-# This file is a modified version based on default i3-config-wizard config
-# source is available here:
-# https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/etc/skel/.config/i3/config
-# Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
-# https://endeavouros.com
-#
-# iconic font icon search: https://fontawesome.com/v4.7/cheatsheet/
-#
-# --> to update this run the following command (will backup existing setup file)
-# wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/etc/skel/.config/i3/config -P ~/.config/i3/
-#
-# Endeavouros-i3 config file
-# Source for complete framework of our i3 config and theming here: https://github.com/endeavouros-team/endeavouros-i3wm-setup
-# EndeavourOS wiki holds some Information also: https://discovery.endeavouros.com/window-tiling-managers/i3-wm/
-# Please see http://i3wm.org/docs/userguide.html for the official i3 reference!
-
-#######################
-# config starts here: #
-#######################
+# REQUIRED PACKAGES: i3blocks xset rofi alacritty xfce4-terminal maim greenclip autotiling dunst feh playerctl tumbler thunar
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -104,35 +82,8 @@ bindcode $mod+$alt+17    move container to workspace  $ws8
 bindcode $mod+$alt+18    move container to workspace  $ws9
 bindcode $mod+$alt+19    move container to workspace  $ws10
 
-# resize window (you can also use the mouse for that):
-#mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
-# Pressing left will shrink the window's width.
-# Pressing right will grow the window's width.
-# Pressing up will shrink the window's height.
-# Pressing down will grow the window's height.
-#        bindsym h resize shrink width 10 px or 10 ppt
-#        bindsym j resize grow height 10 px or 10 ppt
-#        bindsym k resize shrink height 10 px or 10 ppt
-#        bindsym l resize grow width 10 px or 10 ppt
-
-# same bindings, but for the arrow keys
-#        bindsym Left resize shrink width 10 px or 10 ppt
-#        bindsym Down resize grow height 10 px or 10 ppt
-#        bindsym Up resize shrink height 10 px or 10 ppt
-#        bindsym Right resize grow width 10 px or 10 ppt
-
-# back to normal: Enter or Escape
-#	     bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#}
-
-# bindsym $mod+r mode "resize"
-
-######################################
-# keybindings for different actions: #
-######################################
-
+# setup locale
+exec --no-startup-id export LANG=ru_RU.UTF-8
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id $TERMINAL
@@ -151,6 +102,7 @@ bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t
 # Lock the system
 # lock with a picture:
 #bindsym $mod+l exec --no-startup-id i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
+
 # lock by blurring the screen:
 # bindsym $mod+$alt+Delete exec --no-startup-id ~/.config/i3/scripts/blur-lock
 
@@ -159,11 +111,6 @@ bindsym $mod+$alt+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to update i3)
 bindsym $mod+$alt+r restart
-
-# keybinding in fancy rofi (automated):
-# alternative
-# keybinding list in editor:
-# bindsym $mod+F1 exec --no-startup-id xed ~/.config/i3/keybindings
 
 # Backlight control
 #bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
@@ -370,6 +317,13 @@ exec --no-startup-id setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 # exec --no-startup-id ~/.screenlayout/monitor.sh
 
+# disable monitor auto sleep mode when not interacting with pc 
+## disable screen saver
+exec --no-startup-id xset s off       
+# disable Display Power Management Signaling
+exec --no-startup-id xset -dpms 
+# prevent blanking the video device
+exec --no-startup-id xset s noblank 
 # monitor/display/screen managment
 exec --no-startup-id xrandr --output DP-1 --mode 1920x1080 --rate 144
 exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
@@ -377,7 +331,7 @@ exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
 exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 60 --pos 0x1080
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill "/home/shd/Pictures/wallpapers/bg/"
+exec --no-startup-id sleep 1 && feh --bg-fill "/usr/share/wallpapers/solitude_in_radiance-wallpaper-3840x2160.jpg"
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
