@@ -6,4 +6,4 @@
 configuration {
   show-icons: true;
 }
-@theme "themes/rounded-gray-dark.rasi"
+@theme "themes/simple-tokyonight.rasi"

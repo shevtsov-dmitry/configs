@@ -14,12 +14,13 @@
     border: none;
     border-radius: 3px;
     min-height: 0;
-    margin: 0.2em 0.3em 0.2em 0.3em;
+    /* margin: 0.2em 0.3em 0.2em 0.3em; */
 }
 
 /* The whole bar */
 #waybar {
     background-color: transparent;
+    /* background-color: blue; */
     color: #ffffff;
     transition-property: background-color;
     transition-duration: 0.5s;

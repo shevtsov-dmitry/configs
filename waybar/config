@@ -26,7 +26,8 @@
     ],
     "modules-center": [
         //"hyprland/window"
-        "clock#date",
+        //"clock#date",
+        "clock#3",
         "custom/weather"
         //"custom/gammastep"
     ],
@@ -82,7 +83,7 @@
         "on-click": "gsimplecal"
     },
     "clock#3": {
-        "format": " {:%H:%M:%S %p}",
+        "format": " {:%H:%M:%S}",
         "tooltip": false,
         "on-click": "gsimplecal"
     },
