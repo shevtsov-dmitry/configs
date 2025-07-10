@@ -1,6 +1,0 @@
-[default]
-path = "/home/shd/Pictures/Wallpapers"
-duration = "1h"
-
-# options: fit fit-border-color center stretch tile
-mode = "center"
