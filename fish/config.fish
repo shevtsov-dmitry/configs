@@ -69,3 +69,5 @@ function y
 end
 
 fish_add_path /home/shd/.spicetify
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
