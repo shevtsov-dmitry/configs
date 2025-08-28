@@ -1,3 +1,7 @@
+set FISH_CONFIGS_FOLDER_PATH "$HOME/.config/fish"
+
+source $FISH_CONFIGS_FOLDER_PATH/tempo-envs.fish
+
 # ENV
 set FORCE_WAYLAND --enable-features=UseOzonePlatform --ozone-platform=wayland
 set DEV_TOOLS_GRADLE_WATCH gradle java --continuous --parallel --build-cache --configuration-cache
