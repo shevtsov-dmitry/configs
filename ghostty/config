@@ -1,14 +1,15 @@
-font-family = Hack Nerd Font
+font-family = AtkynsonMono Nerd Font
 adjust-cell-height = 3
 font-size = 12.5
 
 gtk-custom-css = tab-style.css
 
-theme = dark:catppuccin-frappe,light:dayfox
+# theme = dark:catppuccin-frappe,light:dayfox
+theme = Dimidium
+
+background-opacity = 0.85
 
 cursor-style = block
 cursor-style-blink = true
 
 shell-integration-features = no-cursor
-
-

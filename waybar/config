@@ -27,8 +27,8 @@
     "modules-center": [
         //"hyprland/window"
         //"clock#date",
-        "clock#3",
-        "custom/weather"
+        "clock#3"
+        // "custom/weather"
         //"custom/gammastep"
     ],
     "modules-right": [
