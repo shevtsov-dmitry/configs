@@ -64,7 +64,36 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[d' autosuggest-accept
 bindkey '^[f' forward-word
-#
+
+
+# Custom zsh syntax highlighting colors
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
+
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+# Good commands (found in $PATH)
+ZSH_HIGHLIGHT_STYLES[command]='fg=green'
+
+# Wrong/unknown commands
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+
+# Options (-a, --help, etc.)
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan,bold'
+
+# Arguments (files, dirs, words after commands)
+ZSH_HIGHLIGHT_STYLES[argument]='fg=white'
+
+# Paths
+ZSH_HIGHLIGHT_STYLES[path]='fg=blue,underline'
+
+# Quoted strings
+ZSH_HIGHLIGHT_STYLES[quoted]='fg=yellow'
+
+# Autosuggestions (from zsh-autosuggestions)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'  # dim gray
+
+
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
