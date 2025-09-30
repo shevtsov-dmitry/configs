@@ -1,7 +1,3 @@
-export CLIENT_URL=http://localhost:5173
-export USER_PSQL_PASSWORD=123123
-
-export EDITOR=nvim
 
 # aliases
 alias vim=nvim
@@ -20,6 +16,7 @@ source "$HOME/.config/zsh/antigen.zsh"
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
+
 antigen theme robbyrussell
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
@@ -33,6 +30,15 @@ antigen bundle zsh-users/zsh-autosuggestions
 
 # Tell Antigen that you're done.
 antigen apply
+
+# this fixes antigen compatabily issues with cd to folder
+autoload -Uz compinit
+if [[ -n ~/.zcompdump && ~/.zcompdump -nt ~/.zshrc ]]; then
+  compinit -C
+else
+  compinit
+fi
+
 
 # theme like oh my posh
 # eval "$(starship init zsh)"
@@ -69,12 +75,12 @@ ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_V
  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# pnpm
-export PNPM_HOME="/home/shd/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
-export PATH=$PATH:/home/shd/.spicetify
+export EDITOR=nvim
+
+alias vsync_mode_enable='nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"'
+
+[ -s "/home/shd/.bun/_bun" ] && source "/home/shd/.bun/_bun"
+
+
+export PATH=$PATH:$HOME/.bun/bin:/home/shd/.spicetify:

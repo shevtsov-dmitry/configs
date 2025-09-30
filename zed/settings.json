@@ -11,14 +11,12 @@
     "agent": {
         "default_model": {
             "provider": "ollama",
-            "model": "deepseek-r1:8b"
-        },
+            "model": "gemma3:latest"
+        }
     },
     "vim_mode": true,
     "ui_font_size": 15,
-    // "buffer_font_family": "Martian Mono",
-    "buffer_font_family": "Iosevka Nerd Font",
-    // "buffer_font_family": "CommitMono Nerd Font",
+    "buffer_font_family": "Cousine Nerd Font",
     "buffer_font_size": 15.5,
     "theme": {
         "mode": "dark", // system, dark, light
