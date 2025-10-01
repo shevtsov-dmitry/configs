@@ -23,7 +23,7 @@
         // "light": "One Light",
         // "light": "Xcode Classic Light",
         "light": "Catppuccin Latte",
-        "dark": "Aura Soft Dark"
+        "dark": "Xcode Spartan"
     },
     "lsp": {
         "jdtls": {

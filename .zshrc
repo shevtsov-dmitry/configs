@@ -2,13 +2,13 @@
 # aliases
 alias vim=nvim
 alias c=clear
+alias e=exit
 alias ls='eza --classify --icons --group-directories-first'
 alias lf=yazi
 alias lg=lazygit
 alias md=mkdir
 alias ls='eza --classify --icons --group-directories-first'
 alias ca='bat -p'
-alias idea="~/IDE/intellij/bin/idea.sh"
 
 # Plugin manager
 source "$HOME/.config/zsh/antigen.zsh"
@@ -112,4 +112,4 @@ alias vsync_mode_enable='nvidia-settings --assign CurrentMetaMode="nvidia-auto-s
 [ -s "/home/shd/.bun/_bun" ] && source "/home/shd/.bun/_bun"
 
 
-export PATH=$PATH:$HOME/.bun/bin:/home/shd/.spicetify:
+export PATH=$PATH:$HOME/.bun/bin:/home/shd/.spicetify:$HOME/.local/portable/yazi:
