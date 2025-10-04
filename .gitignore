@@ -12,6 +12,7 @@ tmux/plugins/
 !alacritty/
 !fish/
 !foot/
+!zsh/
 !hypr/
 !kitty/
 !ghostty/

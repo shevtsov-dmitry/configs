@@ -1,10 +1,13 @@
+# Envs 
+export POSTGRESQL_USER=shd
+export POSTGRESQL_PASSWORD=123123
 
 # aliases
 alias vim=nvim
 alias c=clear
 alias e=exit
 alias ls='eza --classify --icons --group-directories-first'
-alias lf=yazi
+alias lf=y
 alias lg=lazygit
 alias md=mkdir
 alias ls='eza --classify --icons --group-directories-first'
@@ -94,7 +97,6 @@ ZSH_HIGHLIGHT_STYLES[quoted]='fg=yellow'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'  # dim gray
 
 
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
  export SDKMAN_DIR="$HOME/.sdkman"
@@ -104,8 +106,16 @@ ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_V
  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 export EDITOR=nvim
+SYSTEMD_EDITOR=$EDITOR
 
 alias vsync_mode_enable='nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"'
 
@@ -113,3 +123,4 @@ alias vsync_mode_enable='nvidia-settings --assign CurrentMetaMode="nvidia-auto-s
 
 
 export PATH=$PATH:$HOME/.bun/bin:/home/shd/.spicetify:$HOME/.local/portable/yazi:
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
