@@ -16,12 +16,12 @@
     },
     "vim_mode": true,
     "ui_font_size": 15,
-    "buffer_font_family": "Lilex Nerd Font",
-    "buffer_font_size": 15,
+    "buffer_font_family": "Iosevka Nerd Font",
+    "buffer_font_size": 15.5,
     "buffer_font_weight": 500,
     "theme": {
         "mode": "system", // system, dark, light
-        "light": "Xcode Spartan",
+        "light": "Aura Dark",
         "dark": "One Dark"
     },
     "lsp": {

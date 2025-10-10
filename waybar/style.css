@@ -20,7 +20,6 @@
 /* The whole bar */
 #waybar {
     background-color: transparent;
-    /* background-color: blue; */
     color: #ffffff;
     transition-property: background-color;
     transition-duration: 0.5s;
