@@ -121,6 +121,9 @@ alias vsync_mode_enable='nvidia-settings --assign CurrentMetaMode="nvidia-auto-s
 
 [ -s "/home/shd/.bun/_bun" ] && source "/home/shd/.bun/_bun"
 
+PORTABLE=$HOME/.local/portable
 
-export PATH=$PATH:$HOME/.bun/bin:/home/shd/.spicetify:$HOME/.local/portable/yazi:
+export PATH=$PATH:$HOME/.bun/bin:/home/shd/.spicetify:$PORTABLE/yazi:$PORTABLE/gradle-9.1.0/bin:
+
+
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
