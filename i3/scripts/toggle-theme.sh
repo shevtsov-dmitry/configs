@@ -9,7 +9,7 @@ dark_theme="Adwaita-dark"
 
 # Toggle the theme
 if [[ "$current_theme" == *"$light_theme"* ]]; then
-    gsettings set org.gnome.desktop.interface gtk-theme "$dark_theme"
+  gsettings set org.gnome.desktop.interface gtk-theme "$dark_theme"
 else
-    gsettings set org.gnome.desktop.interface gtk-theme "$light_theme"
+  gsettings set org.gnome.desktop.interface gtk-theme "$light_theme"
 fi

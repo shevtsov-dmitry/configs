@@ -1,4 +1,4 @@
-# REQUIRED PACKAGES: i3blocks xset rofi alacritty xfce4-terminal maim greenclip autotiling dunst feh playerctl tumbler thunar
+# REQUIRED PACKAGES: i3blocks xset rofi alacritty xfce4-terminal maim greenclip autotiling dunst feh playerctl tumbler thunar thunar-archive-plugin file-roller
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -41,8 +41,8 @@ new_window pixel 1
 # hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 6
-gaps outer 3
+# gaps inner 6
+# gaps outer 4
 
 # show window title bars (not officially supported with i3gaps)
 #default_border normal
@@ -180,16 +180,6 @@ bindsym $mod+a focus parent
 # use meta keys showing osc using dunst
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_up
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
-
-# gradular volume control
-# bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
-# bindsym $mod+XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
-bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse set Master 3%+ && pkill -RTMIN+1 i3blocks
-bindsym $mod+XF86AudioLowerVolume exec --no-startup-id amixer -D pulse set Master 3%- && pkill -RTMIN+1 i3blocks
-
-# mute
-#bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle && killall -USR1 i3blocks
-# use meta keys showing osc using dunst
 bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_mute
 
 # mic mute toggle
@@ -324,17 +314,17 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms 
 # prevent blanking the video device
 exec --no-startup-id xset s noblank 
-# monitor/display/screen managment
-exec --no-startup-id xrandr --output DP-1 --mode 1920x1080 --rate 144
-exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
 
-exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 60 --pos 0x1080
+# monitor/display/screen managment
+exec --no-startup-id bash -c "sleep 1 && xrandr --output DP-0 --mode 3840x2160 --rate 160 --scale 1x1"
+
+# exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 60 --pos 0x1080
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill "/usr/share/wallpapers/solitude_in_radiance-wallpaper-3840x2160.jpg"
+exec --no-startup-id sleep 1 && feh --bg-fill "/mnt/HDD/Pictures/Wallpapers/windows-11-dark-mode-abstract-background-black-background-3840x2160-8710.jpg"
 
 # set powersavings for display:
-exec --no-startup-id xset s 480 dpms 600 600 600
+# exec --no-startup-id xset s 480 dpms 600 600 600
 
 # disable power saving (for example if using xscreensaver)
 #exec --no-startup-id xset -dpms
@@ -456,7 +446,7 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango: Lilex Nerd Font 10
+		font pango: Segoe UI 8
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
         # status_command i3status
 	    	position bottom
