@@ -117,13 +117,13 @@ function y() {
 export EDITOR=nvim
 SYSTEMD_EDITOR=$EDITOR
 
-alias vsync_mode_enable='nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"'
+# alias vsync_mode_enable='nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"'
 
 [ -s "/home/shd/.bun/_bun" ] && source "/home/shd/.bun/_bun"
 
-PORTABLE=$HOME/.local/portable
+PORTABLE=$HOME/Portable
 
-export PATH=$PATH:$HOME/.bun/bin:/home/shd/.spicetify:$PORTABLE/yazi:$PORTABLE/gradle-9.1.0/bin:
+export PATH=$PATH:$HOME/.cache/.bun/bin:$HOME/.bun/bin:/home/shd/.spicetify:$PORTABLE/yazi:$PORTABLE/gradle-9.2.0/bin:
 
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi

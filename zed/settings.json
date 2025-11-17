@@ -11,17 +11,17 @@
     "agent": {
         "default_model": {
             "provider": "ollama",
-            "model": "gemma3:latest"
+            "model": "qwen2.5-coder"
         }
     },
     "vim_mode": true,
     "ui_font_size": 15,
-    "buffer_font_family": "Iosevka Nerd Font",
-    "buffer_font_size": 15.5,
-    "buffer_font_weight": 500,
+    "buffer_font_family": "Google Sans Code",
+    "buffer_font_size": 15,
+    "buffer_font_weight": 400,
     "theme": {
         "mode": "system", // system, dark, light
-        "light": "Aura Dark",
+        "light": "One Light",
         "dark": "One Dark"
     },
     "lsp": {
@@ -69,26 +69,21 @@
             }
         },
         "JavaScript": {
-            "format_on_save": {
-                "external": {
-                    "command": "prettier",
-                    "arguments": ["--stdin-filepath", "{buffer_path}"]
-                }
-            },
+            "format_on_save": "on",
+            "formatter": "prettier",
             "code_actions_on_format": {
                 "source.fixAll.eslint": true
             }
         },
         "Java": {
             "formatter": "language_server",
-            // "prettier": "on",
-            // "indent_guides": true,
             "tab_size": 4,
             "format_on_save": "on"
         }
     },
     "prettier": {
         "allowed": true,
+        // "arguments": ["--stdin-filepath", "{buffer_path}"],
         "plugins": ["prettier-plugin-tailwindcss"],
         "trailingComma": "es5",
         "tabWidth": 4,
