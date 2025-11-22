@@ -11,7 +11,7 @@
     "agent": {
         "default_model": {
             "provider": "ollama",
-            "model": "qwen2.5-coder"
+            "model": "qwen2.5-coder:latest"
         }
     },
     "vim_mode": true,
@@ -22,7 +22,7 @@
     "theme": {
         "mode": "system", // system, dark, light
         "light": "One Light",
-        "dark": "One Dark"
+        "dark": "Nord Dark"
     },
     "lsp": {
         "jdtls": {

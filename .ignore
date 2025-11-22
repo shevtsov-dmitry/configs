@@ -3,6 +3,9 @@ snap/
 target/
 zig-out/
 go/
+build/
+app/build/
+bin/
 
 .settings/
 .nvm/
