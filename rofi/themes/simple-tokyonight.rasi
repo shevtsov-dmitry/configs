@@ -1,5 +1,5 @@
 * {
-  font:   "Roboto Nerd Font Md 18";
+  font:   "Adwaita Nerd Font Medium 11";
 
   bg0     : #1a1b26;
   bg1     : #1f2335;
@@ -32,7 +32,7 @@ element-icon, element-text, scrollbar {
 
 window {
   location : center;
-  width    : 440px;
+  width    : 280px;
   x-offset : 4px;
   y-offset : 26px;
 
