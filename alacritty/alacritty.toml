@@ -34,7 +34,7 @@ mods = "Alt"
 hide_when_typing = true
 
 [window]
-opacity = 1
+opacity = 0.85
 dimensions = { columns = 100, lines = 25 }
 
 [general]
