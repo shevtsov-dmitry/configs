@@ -21,6 +21,7 @@ tmux/plugins/
 !swaylock/
 !swaync/
 !tmux/
+!niri/
 !waybar/
 !wofi/
 !wpaperd/
