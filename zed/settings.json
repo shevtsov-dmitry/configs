@@ -8,21 +8,24 @@
 // from the command palette
 {
     // "base_keymap": "JetBrains",
+    "edit_predictions": {
+        "provider": "ollama"
+    },
     "agent": {
         "default_model": {
             "provider": "ollama",
-            "model": "qwen2.5-coder:latest"
-        }
+            "model": "qwen2.5-coder:latest",
+        },
     },
     "vim_mode": true,
     "ui_font_size": 15,
-    "buffer_font_family": "Google Sans Code",
+    "buffer_font_family": "Google Sans Code NF",
     "buffer_font_size": 15,
     "buffer_font_weight": 400,
     "theme": {
-        "mode": "system", // system, dark, light
-        "light": "One Light",
-        "dark": "Nord Dark"
+        "mode": "light", // system, dark, light
+        "light": "Xcode Spartan",
+        "dark": "Aura Dark (Soft Text)",
     },
     "lsp": {
         "jdtls": {
@@ -30,56 +33,59 @@
                 "settings": {
                     "java": {
                         "settings": {
-                            "java.jdt.ls.lombokSupport.enabled:": true
+                            "java.jdt.ls.lombokSupport.enabled:": true,
                         },
                         "jdt": {
                             "ls": {
                                 "lombokSupport": {
-                                    "enabled": true
-                                }
-                            }
+                                    "enabled": true,
+                                },
+                            },
                         },
                         "referencesCodeLens": {
-                            "enabled": true
+                            "enabled": true,
                         },
                         "signatureHelp": {
-                            "enabled": true
+                            "enabled": true,
                         },
                         "implementationsCodeLens": {
-                            "enabled": true
+                            "enabled": true,
                         },
                         "format": {
-                            "enabled": true
+                            "enabled": true,
                         },
                         "contentProvider": {
-                            "preferred": null
+                            "preferred": null,
                         },
                         "autobuild": {
-                            "enabled": false
-                        }
-                    }
-                }
-            }
-        }
+                            "enabled": false,
+                        },
+                    },
+                },
+            },
+        },
     },
     "languages": {
         "TSX": {
             "code_actions_on_format": {
-                "source.organizeImports": true
-            }
+                "source.organizeImports": true,
+            },
         },
         "JavaScript": {
             "format_on_save": "on",
             "formatter": "prettier",
             "code_actions_on_format": {
-                "source.fixAll.eslint": true
-            }
+                "source.fixAll.eslint": true,
+            },
         },
         "Java": {
             "formatter": "language_server",
             "tab_size": 4,
-            "format_on_save": "on"
-        }
+            "format_on_save": "on",
+        },
+        "Gleam": {
+            "formatter": "language_server",
+        },
     },
     "prettier": {
         "allowed": true,
@@ -88,16 +94,16 @@
         "trailingComma": "es5",
         "tabWidth": 4,
         "semi": false,
-        "singleQuote": true
+        "singleQuote": true,
     },
     "journal": {
         "path": "~",
-        "hour_format": "hour24"
+        "hour_format": "hour24",
     },
     "git": {
         "inline_blame": {
-            "enabled": false
-        }
+            "enabled": false,
+        },
     },
-    "file_scan_exclusions": ["**/.git", "**/.classpath", "**/.settings"]
+    "file_scan_exclusions": ["**/.git", "**/.classpath", "**/.settings"],
 }
