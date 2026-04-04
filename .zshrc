@@ -9,6 +9,8 @@ alias e=exit
 alias ls='eza --classify --icons --group-directories-first'
 alias lf=y
 alias lg=lazygit
+alias lzd=lazydocker
+alias copy=xclip -sel clip
 alias md=mkdir
 alias ls='eza --classify --icons --group-directories-first'
 alias ca='bat -p'
@@ -123,7 +125,7 @@ SYSTEMD_EDITOR=$EDITOR
 
 PORTABLE=$HOME/Portable
 
-export PATH=$PATH:$HOME/.cache/.bun/bin:$HOME/.bun/bin:/home/shd/.spicetify:$PORTABLE/yazi:$PORTABLE/gradle-9.2.0/bin:
+export PATH=$PATH:$HOME/.spicetify:$PORTABLE/yazi:$HOME/.cache/rebar3/bin:
 
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
