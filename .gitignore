@@ -3,6 +3,7 @@
 tmux/plugins/
 
 # directories
+!swayimg/
 !i3/
 !rofi/
 !wezterm/
