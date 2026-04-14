@@ -1,0 +1,2 @@
+thunar-archive-plugin thunar-media-tags-plugin thunar-volman thunar-shares-plugin thunar-vcs-plugin thunar-dropbox xarchiver
+
