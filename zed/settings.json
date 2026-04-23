@@ -7,11 +7,24 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
-    // "base_keymap": "JetBrains",
+    "project_panel": {
+        "dock": "left"
+    },
+    "git_panel": {
+        "dock": "left"
+    },
+    "collaboration_panel": {
+        "dock": "left"
+    },
+    "outline_panel": {
+        "dock": "left"
+    },
     "edit_predictions": {
-        "provider": "ollama"
+        "provider": "ollama",
     },
     "agent": {
+        "dock": "right",
+        "sidebar_side": "left",
         "default_model": {
             "provider": "ollama",
             "model": "qwen2.5-coder:latest",
@@ -23,7 +36,7 @@
     "buffer_font_size": 15,
     "buffer_font_weight": 400,
     "theme": {
-        "mode": "light", // system, dark, light
+        "mode": "dark", // system, dark, light
         "light": "Xcode Spartan",
         "dark": "Aura Dark (Soft Text)",
     },
