@@ -7,116 +7,127 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
-    "project_panel": {
-        "dock": "left"
+  "proxy": "",
+  "terminal": {
+    "font_family": "RobotoMono Nerd Font Mono",
+    "font_size": 12,
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "edit_predictions": {
+    "ollama": {
+      "max_output_tokens": 64,
+      "model": "qwen2.5-coder:3b-base",
     },
-    "git_panel": {
-        "dock": "left"
+    "provider": "ollama",
+  },
+  "agent": {
+    "default_profile": "minimal",
+    "dock": "right",
+    "sidebar_side": "left",
+    "default_model": {
+      "enable_thinking": false,
+      "provider": "ollama",
+      "model": "qwen2.5-coder:7b-base",
     },
-    "collaboration_panel": {
-        "dock": "left"
-    },
-    "outline_panel": {
-        "dock": "left"
-    },
-    "edit_predictions": {
-        "provider": "ollama",
-    },
-    "agent": {
-        "dock": "right",
-        "sidebar_side": "left",
-        "default_model": {
-            "provider": "ollama",
-            "model": "qwen2.5-coder:latest",
-        },
-    },
-    "vim_mode": true,
-    "ui_font_size": 15,
-    "buffer_font_family": "Google Sans Code NF",
-    "buffer_font_size": 15,
-    "buffer_font_weight": 400,
-    "theme": {
-        "mode": "dark", // system, dark, light
-        "light": "Xcode Spartan",
-        "dark": "Aura Dark (Soft Text)",
-    },
-    "lsp": {
-        "jdtls": {
-            "initialization_options": {
-                "settings": {
-                    "java": {
-                        "settings": {
-                            "java.jdt.ls.lombokSupport.enabled:": true,
-                        },
-                        "jdt": {
-                            "ls": {
-                                "lombokSupport": {
-                                    "enabled": true,
-                                },
-                            },
-                        },
-                        "referencesCodeLens": {
-                            "enabled": true,
-                        },
-                        "signatureHelp": {
-                            "enabled": true,
-                        },
-                        "implementationsCodeLens": {
-                            "enabled": true,
-                        },
-                        "format": {
-                            "enabled": true,
-                        },
-                        "contentProvider": {
-                            "preferred": null,
-                        },
-                        "autobuild": {
-                            "enabled": false,
-                        },
-                    },
+  },
+  "vim_mode": true,
+  "ui_font_size": 14,
+  "buffer_font_family": "Aporetic Sans Mono",
+  "buffer_font_size": 15,
+  "buffer_font_weight": 400,
+  "theme": {
+    "mode": "dark", // system, dark, light
+    "light": "Xcode Spartan",
+    "dark": "Nord Dark",
+  },
+  "lsp": {
+    "jdtls": {
+      "initialization_options": {
+        "settings": {
+          "java": {
+            "settings": {
+              "java.jdt.ls.lombokSupport.enabled:": true,
+            },
+            "jdt": {
+              "ls": {
+                "lombokSupport": {
+                  "enabled": true,
                 },
+              },
             },
-        },
-    },
-    "languages": {
-        "TSX": {
-            "code_actions_on_format": {
-                "source.organizeImports": true,
+            "referencesCodeLens": {
+              "enabled": true,
             },
-        },
-        "JavaScript": {
-            "format_on_save": "on",
-            "formatter": "prettier",
-            "code_actions_on_format": {
-                "source.fixAll.eslint": true,
+            "signatureHelp": {
+              "enabled": true,
             },
+            "implementationsCodeLens": {
+              "enabled": true,
+            },
+            "format": {
+              "enabled": true,
+            },
+            "contentProvider": {
+              "preferred": null,
+            },
+            "autobuild": {
+              "enabled": false,
+            },
+          },
         },
-        "Java": {
-            "formatter": "language_server",
-            "tab_size": 4,
-            "format_on_save": "on",
-        },
-        "Gleam": {
-            "formatter": "language_server",
-        },
+      },
     },
-    "prettier": {
-        "allowed": true,
-        // "arguments": ["--stdin-filepath", "{buffer_path}"],
-        "plugins": ["prettier-plugin-tailwindcss"],
-        "trailingComma": "es5",
-        "tabWidth": 4,
-        "semi": false,
-        "singleQuote": true,
+  },
+  "languages": {
+    "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+      },
     },
-    "journal": {
-        "path": "~",
-        "hour_format": "hour24",
+    "JavaScript": {
+      "format_on_save": "on",
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+      },
     },
-    "git": {
-        "inline_blame": {
-            "enabled": false,
-        },
+    "Java": {
+      "formatter": "language_server",
+      "tab_size": 4,
+      "format_on_save": "on",
     },
-    "file_scan_exclusions": ["**/.git", "**/.classpath", "**/.settings"],
+    "Gleam": {
+      "formatter": "language_server",
+    },
+  },
+  "prettier": {
+    "allowed": true,
+    // "arguments": ["--stdin-filepath", "{buffer_path}"],
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+  },
+  "journal": {
+    "path": "~",
+    "hour_format": "hour24",
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  "file_scan_exclusions": ["**/.git", "**/.classpath", "**/.settings"],
 }

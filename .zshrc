@@ -1,16 +1,10 @@
-# Envs 
-export POSTGRESQL_USER=shd
-export POSTGRESQL_PASSWORD=123123
-
 # aliases
 alias vim=nvim
 alias c=clear
 alias e=exit
-alias ls='eza --classify --icons --group-directories-first'
 alias lf=y
 alias lg=lazygit
 alias lzd=lazydocker
-alias copy=xclip -sel clip
 alias md=mkdir
 alias ls='eza --classify --icons --group-directories-first'
 alias ca='bat -p'
@@ -18,11 +12,11 @@ alias ca='bat -p'
 # Plugin manager
 source "$HOME/.config/zsh/antigen.zsh"
 
-
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-antigen theme robbyrussell
+# antigen theme robbyrussell
+antigen theme gallifrey
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
@@ -63,6 +57,7 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(fzf --zsh)"
 
 # bindings
 bindkey '^p' history-search-backward
@@ -116,16 +111,15 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-export EDITOR=nvim
-SYSTEMD_EDITOR=$EDITOR
-
-# alias vsync_mode_enable='nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"'
 
 [ -s "/home/shd/.bun/_bun" ] && source "/home/shd/.bun/_bun"
 
 PORTABLE=$HOME/Portable
+export EDITOR=nvim
+SYSTEMD_EDITOR=$EDITOR
 
 export PATH=$PATH:$HOME/.spicetify:$PORTABLE/yazi:$HOME/.cache/rebar3/bin:
 
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
