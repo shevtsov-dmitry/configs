@@ -3,6 +3,7 @@
 tmux/plugins/
 
 # directories
+!fontconfig/
 !swayimg/
 !i3/
 !rofi/
