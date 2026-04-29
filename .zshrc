@@ -57,7 +57,9 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)" # ON NON DEBIAN
+source /usr/share/doc/fzf/examples/key-bindings.zsh # ON DEBIAN
+
 
 # bindings
 bindkey '^p' history-search-backward
@@ -121,5 +123,5 @@ SYSTEMD_EDITOR=$EDITOR
 export PATH=$PATH:$HOME/.spicetify:$PORTABLE/yazi:$HOME/.cache/rebar3/bin:
 
 
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
