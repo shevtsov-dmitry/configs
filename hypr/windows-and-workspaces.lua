@@ -5,6 +5,12 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
+hl.config({
+	xwayland = {
+		force_zero_scaling = true,
+	},
+})
+
 -- Example window rules that are useful
 
 local suppressMaximizeRule = hl.window_rule({

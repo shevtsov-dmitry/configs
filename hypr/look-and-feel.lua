@@ -5,8 +5,8 @@
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 5,
-		gaps_out = 20,
+		gaps_in = 3,
+		gaps_out = 5,
 
 		border_size = 2,
 
@@ -21,7 +21,7 @@ hl.config({
 		-- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
 		allow_tearing = false,
 
-		layout = "dwindle",
+		layout = "scrolling",
 	},
 
 	decoration = {
@@ -41,8 +41,8 @@ hl.config({
 
 		blur = {
 			enabled = true,
-			size = 3,
-			passes = 1,
+			size = 6,
+			passes = 2,
 			vibrancy = 0.1696,
 		},
 	},
