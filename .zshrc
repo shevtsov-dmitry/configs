@@ -38,10 +38,6 @@ else
   compinit
 fi
 
-
-# theme like oh my posh
-# eval "$(starship init zsh)"
-
 # History
 HISTSIZE=5000
 SAVEHIST=3000
@@ -57,9 +53,8 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 eval "$(zoxide init --cmd cd zsh)"
-# eval "$(fzf --zsh)" # ON NON DEBIAN
-source /usr/share/doc/fzf/examples/key-bindings.zsh # ON DEBIAN
-
+eval "$(fzf --zsh)" # NON DEBIAN
+# source /usr/share/doc/fzf/examples/key-bindings.zsh # DEBIAN
 
 # bindings
 bindkey '^p' history-search-backward
@@ -95,16 +90,6 @@ ZSH_HIGHLIGHT_STYLES[quoted]='fg=yellow'
 # Autosuggestions (from zsh-autosuggestions)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'  # dim gray
 
-
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
- export SDKMAN_DIR="$HOME/.sdkman"
- [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
- export NVM_DIR="$HOME/.nvm"
- [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
- [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -113,15 +98,12 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-
-[ -s "/home/shd/.bun/_bun" ] && source "/home/shd/.bun/_bun"
-
-PORTABLE=$HOME/Portable
+### DEFAULTS ENVS ###
 export EDITOR=nvim
+
+
+### PATH ENVS ###
+PORTABLE=$HOME/Portable
 SYSTEMD_EDITOR=$EDITOR
 
-export PATH=$PATH:$HOME/.spicetify:$PORTABLE/yazi:$HOME/.cache/rebar3/bin:
-
-
-
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+export PATH=$PATH:$HOME/.spicetify:

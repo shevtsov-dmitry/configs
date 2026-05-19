@@ -33,7 +33,7 @@ mods = "Alt"
 hide_when_typing = true
 
 [window]
-decorations = "none"
+# decorations = "none"
 opacity = 0.85
 padding = { x = 10, y = 7 }
 dynamic_padding = true
