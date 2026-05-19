@@ -12,26 +12,27 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(default_apps.fileManager))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(default_apps.capturing))
 hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd("hyprctl dispatch exit"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(default_apps.appLauncher))
--- hl.bind(mainMod .. " + F", hl.dsp.fullscreen())
-hl.bind("CTRL + ALT + L", hl.dsp.exec_cmd("sleep 1 && hyprctl dispatch dpms off"))
+hl.bind("CTRL + ALT + L", hl.dsp.dpms({ action = "off" }))
 
 -- Window actions
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + ALT + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + G", hl.dsp.window.pin())
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + S", hl.dsp.window.center())
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 
 -- Clipboard manager
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | wofi --dmenu | cliphist decode | wl-copy"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(default_apps.clipboard))
 
 --------------------------
 ---- WINDOW GROUPING ----
 --------------------------
 
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprctl dispatch togglegroup"))
-hl.bind("ALT + TAB", hl.dsp.exec_cmd("hyprctl dispatch changegroupactive b"))
+-- hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprctl dispatch togglegroup"))
+-- hl.bind("ALT + TAB", hl.dsp.exec_cmd("hyprctl dispatch changegroupactive b"))
 -- hl.bind("CTRL_R", hl.dsp.exec_cmd("hyprctl dispatch changegroupactive b"))
-hl.bind("ALT + SPACE", hl.dsp.exec_cmd("hyprctl dispatch changegroupactive f"))
+-- hl.bind("ALT + SPACE", hl.dsp.exec_cmd("hyprctl dispatch changegroupactive f"))
 
 ------------------------
 ---- VOLUME CONTROL ----
@@ -166,9 +167,9 @@ end
 ----------------------------------
 
 for i = 1, 10 do
-	local key = i % 10
-
-	hl.bind(mainMod .. " + ALT + " .. key, hl.dsp.exec_cmd("hyprctl dispatch movetoworkspacesilent " .. i))
+	local key = i % 10 -- 10 maps to key 0
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + ALT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 ---------------------------

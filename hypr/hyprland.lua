@@ -1,4 +1,6 @@
 -- https://wiki.hypr.land/Configuring/Start/
+--
+-- default config example https://github.com/hyprwm/Hyprland/blob/main/example/hyprland.lua
 
 require("monitors")
 require("autostart")
