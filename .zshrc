@@ -53,8 +53,8 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(fzf --zsh)" # NON DEBIAN
-# source /usr/share/doc/fzf/examples/key-bindings.zsh # DEBIAN
+# eval "$(fzf --zsh)" # NON DEBIAN
+source /usr/share/doc/fzf/examples/key-bindings.zsh # DEBIAN
 
 # bindings
 bindkey '^p' history-search-backward
@@ -98,12 +98,13 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
 ### DEFAULTS ENVS ###
 export EDITOR=nvim
-
+export SYSTEMD_EDITOR=$EDITOR
 
 ### PATH ENVS ###
 PORTABLE=$HOME/Portable
-SYSTEMD_EDITOR=$EDITOR
 
-export PATH=$PATH:$HOME/.spicetify:
+export PATH=$PATH:$HOME/.spicetify:$PORTABLE/yazi/target/release:$HOME/.local/bin:$HOME/.bun/bin:$PORTABLE/llama.cpp/build/bin:
