@@ -1,13 +1,14 @@
--- https://wiki.hypr.land/Configuring/Start/
---
--- default config example https://github.com/hyprwm/Hyprland/blob/main/example/hyprland.lua
+-- CachyOS Hyprland Configuration
 
-require("monitors")
-require("autostart")
-require("environment-variables")
-require("keymap")
-require("look-and-feel")
-require("animations-advanced-configuration")
-require("mouse-and-keyboard")
-require("windows-and-workspaces")
-require("permissions")
+require("config.animations")
+require("config.autostart")
+require("config.colors")
+require("config.decorations")
+require("config.variables")
+require("config.environment")
+require("config.inputs")
+require("config.binds")
+require("config.misc")
+require("config.monitors")
+require("config.windowrules")
+require("config.workspaces")

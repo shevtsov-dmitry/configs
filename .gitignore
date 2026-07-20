@@ -28,6 +28,8 @@ tmux/plugins/
 !wofi/
 !wpaperd/
 !zed/
+!systemd/
+!xdg-desktop-portal/
 
 # files
 !.gitignore
