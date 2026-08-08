@@ -13,7 +13,11 @@
             "alt-backspace": "editor::DeleteToPreviousWordStart",
             "alt-delete": "editor::DeleteToNextWordEnd",
             "alt-`": "terminal_panel::ToggleFocus",
-            "alt-insert": "task::Rerun"
+            "alt-insert": "task::Rerun",
+            "alt-shift-h": "workspace::ActivatePaneLeft",
+               "alt-shift-j": "workspace::ActivatePaneDown",
+               "alt-shift-k": "workspace::ActivatePaneUp",
+               "alt-shift-l": "workspace::ActivatePaneRight"
         }
     },
     {
@@ -22,6 +26,7 @@
             // "j k": ["workspace::SendKeystrokes", "escape"]
             // "alt-enter": "assistant::QuoteSelection"
             "alt-enter": "editor::ToggleCodeActions"
+
         }
     }
 ]
