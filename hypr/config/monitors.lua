@@ -8,17 +8,18 @@
 -- })
 
 hl.monitor({
-	output = "DP-1",
+	output = "DP-2",
 	mode = "3840x2160@160",
 	position = "0x0",
 	scale = "1.5",
 	vrr = 0,
 })
 
--- hl.monitor({
--- 	output = "DP-1",
--- 	mode = "1920x1080@320",
--- 	position = "0x0",
--- 	scale = "1",
--- 	vrr = 0,
--- })
+hl.monitor({
+	output = "HDMI-A-1",
+	mode = "1920x1080@144",
+	position = "auto-right",
+	scale = 1,
+	vrr = 0,
+	disabled = false,
+})
