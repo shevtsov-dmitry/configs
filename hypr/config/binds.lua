@@ -104,6 +104,12 @@ hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-cen
 -------------------------------
 ---- WORKSPACES & MONITORS ----
 -------------------------------
+-- Turn off monitors on Ctrl + Alt + L
+hl.bind("CTRL + ALT + L", function()
+	hl.timer(function()
+		hl.dispatch(hl.dsp.dpms({ action = "disable" }))
+	end, { timeout = 500, type = "oneshot" })
+end)
 
 -- Focus on monitors
 -- hl.bind(mainMod .. " + 1", hl.dsp.focus({ monitor = MONITOR1 }))

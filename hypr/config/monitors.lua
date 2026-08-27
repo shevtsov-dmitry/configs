@@ -21,5 +21,5 @@ hl.monitor({
 	position = "auto-right",
 	scale = 1,
 	vrr = 0,
-	disabled = false,
+	disabled = true,
 })
