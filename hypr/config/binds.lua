@@ -90,6 +90,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(noctCall .. "brightness-down"),
 -- Screen Capture
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a"))
 hl.bind("Print", hl.dsp.exec_cmd(noctCall .. "screenshot-region"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(noctCall .. "screenshot-region"))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(noctCall .. "screenshot-fullscreen"))
 
 -- Theming and Wallpaper
@@ -104,12 +105,18 @@ hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-cen
 -------------------------------
 ---- WORKSPACES & MONITORS ----
 -------------------------------
+---
 -- Turn off monitors on Ctrl + Alt + L
 hl.bind("CTRL + ALT + L", function()
 	hl.timer(function()
 		hl.dispatch(hl.dsp.dpms({ action = "disable" }))
 	end, { timeout = 500, type = "oneshot" })
 end)
+
+-- Switch between monitors
+hl.bind(mainMod .. " + SHIFT + F12", hl.dsp.exec_cmd("$HOME/scripts/dp-only"))
+
+hl.bind(mainMod .. " + SHIFT + F11", hl.dsp.exec_cmd("$HOME/scripts/hdmi-only"))
 
 -- Focus on monitors
 -- hl.bind(mainMod .. " + 1", hl.dsp.focus({ monitor = MONITOR1 }))

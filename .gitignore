@@ -4,6 +4,7 @@ tmux/plugins/
 
 # directories
 !fontconfig/
+!noctalia/
 !swayimg/
 !i3/
 !rofi/
