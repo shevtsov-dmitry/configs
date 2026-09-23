@@ -40,4 +40,5 @@ dynamic_padding = true
 dimensions = { columns = 100, lines = 25 }
 
 [general]
+import = ["~/.config/alacritty/themes/noctalia.toml"]
 # import = ["/home/shd/.config/alacritty/themes/themes/ashes_light.toml"]

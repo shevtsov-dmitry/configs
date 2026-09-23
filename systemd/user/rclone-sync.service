@@ -1,0 +1,6 @@
+[Unit]
+Description=Rclone Dropbox Multi-Folder Sync
+
+[Service]
+Type=oneshot
+ExecStart=%h/scripts/dropbox-bisync.sh
