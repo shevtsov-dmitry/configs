@@ -13,6 +13,10 @@ hl.config({
 		key_press_enables_dpms = true,
 		mouse_move_enables_dpms = true,
 	},
+	render = {
+		cm_auto_hdr = 0,
+		-- cm_fs_passthrough = 0,
+	},
 	xwayland = {
 		force_zero_scaling = true,
 	},

@@ -16,14 +16,6 @@ hl.monitor({
 	disabled = false,
 })
 
--- hl.monitor({
--- 	output = "DP-1",
--- 	mode = "1920x1080@320",
--- 	position = "0x0",
--- 	scale = "1",
--- 	vrr = 0,
--- })
-
 hl.monitor({
 	output = "HDMI-A-1",
 	mode = "1920x1080@144",
