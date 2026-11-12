@@ -3,6 +3,7 @@
 tmux/plugins/
 
 # directories
+!gtk-3.0/
 !fontconfig/
 !noctalia/
 !swayimg/
@@ -30,7 +31,6 @@ tmux/plugins/
 !wpaperd/
 !zed/
 !systemd/
-!xdg-desktop-portal/
 
 # files
 !.gitignore
