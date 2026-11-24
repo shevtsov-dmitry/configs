@@ -62,6 +62,17 @@ hl.window_rule({
 	float = true,
 	size = { "max(monitor_w, monitor_h)*0.17", "min(monitor_w, monitor_h)*0.43" },
 })
+
+hl.window_rule({
+	name = "incy-fixed-window",
+	match = {
+		class = "^(java-lang-Thread)$",
+		title = "^(INCY)$",
+	},
+	float = true,
+	size = { "649", "441" },
+	center = true,
+})
 hl.window_rule({ match = { class = "^(org\\.kde\\.keditfiletype)$" }, float = true })
 hl.window_rule({
 	match = { class = "^(org\\.kde\\.ark)$" },
